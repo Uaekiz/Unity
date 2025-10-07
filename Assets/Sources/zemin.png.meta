@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b4179ce57e748af41bcc56ed2f3615f9
+guid: af901793ce747354da52c1deca40f33d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4703617513264807681
-    second: Bekir_0
+      213: 1171379737102308960
+    second: zemin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bekir_0
+      name: zemin_0
       rect:
         serializedVersion: 2
-        x: 135
-        y: 11
-        width: 254
-        height: 486
+        x: 0
+        y: 17
+        width: 256
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff08b82eac469beb0800000000000000
-      internalID: -4703617513264807681
+      spriteID: 066d2172aa3914010800000000000000
+      internalID: 1171379737102308960
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bekir_0: -4703617513264807681
+      zemin_0: 1171379737102308960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

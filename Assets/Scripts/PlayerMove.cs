@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 4f;
     public Animator animator;
     private int moveDir = 0; // -1 = sol, 0 = dur, 1 = sağ
     bool left = false;
