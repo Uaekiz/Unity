@@ -1,0 +1,402 @@
+fileFormatVersion: 2
+guid: bf68256c0e85820488bdf1ea82b4fe20
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5956400674075591878
+    second: BackGround_ORG_0
+  - first:
+      213: 5784927497310462956
+    second: BackGround_ORG_1
+  - first:
+      213: -7223084601740957587
+    second: BackGround_ORG_2
+  - first:
+      213: 9219254871030660963
+    second: BackGround_ORG_3
+  - first:
+      213: -1117188259067782465
+    second: BackGround_ORG_4
+  - first:
+      213: 8000055325288825220
+    second: BackGround_ORG_5
+  - first:
+      213: 5604639316501108491
+    second: BackGround_ORG_6
+  - first:
+      213: -7835218484370083173
+    second: BackGround_ORG_7
+  - first:
+      213: -3837873347189234980
+    second: BackGround_ORG_8
+  - first:
+      213: -2854357771143632506
+    second: BackGround_ORG_9
+  - first:
+      213: 2767306643804214789
+    second: BackGround_ORG_10
+  - first:
+      213: -9206154569154999603
+    second: BackGround_ORG_11
+  - first:
+      213: 6405931002059694518
+    second: BackGround_ORG_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BackGround_ORG_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 547
+        width: 763
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3bb3d1352d965da0800000000000000
+      internalID: -5956400674075591878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGround_ORG_1
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 574
+        width: 103
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce36490b8e0384050800000000000000
+      internalID: 5784927497310462956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGround_ORG_2
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 267
+        width: 763
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68e2a203d272cb90800000000000000
+      internalID: -7223084601740957587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGround_ORG_3
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 288
+        width: 103
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f7291a57f51ff70800000000000000
+      internalID: 9219254871030660963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGround_ORG_6
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 190
+        width: 88
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b079c3283cda7cd40800000000000000
+      internalID: 5604639316501108491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGround_ORG_7
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 36
+        width: 103
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b92fb8d1d46b34390800000000000000
+      internalID: -7835218484370083173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGround_ORG_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 35
+        width: 55
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2a8df46822dbac0800000000000000
+      internalID: -3837873347189234980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGround_ORG_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 22
+        width: 121
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689ab1deab84368d0800000000000000
+      internalID: -2854357771143632506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGround_ORG_10
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 17
+        width: 215
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50657801bb2776620800000000000000
+      internalID: 2767306643804214789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGround_ORG_12
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 68
+        width: 16
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b12e696e4076e850800000000000000
+      internalID: 6405931002059694518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5d8fe193e7e8f824a956d8593ff2d4b7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BackGround_ORG_0: -5956400674075591878
+      BackGround_ORG_1: 5784927497310462956
+      BackGround_ORG_10: 2767306643804214789
+      BackGround_ORG_11: -9206154569154999603
+      BackGround_ORG_12: 6405931002059694518
+      BackGround_ORG_2: -7223084601740957587
+      BackGround_ORG_3: 9219254871030660963
+      BackGround_ORG_4: -1117188259067782465
+      BackGround_ORG_5: 8000055325288825220
+      BackGround_ORG_6: 5604639316501108491
+      BackGround_ORG_7: -7835218484370083173
+      BackGround_ORG_8: -3837873347189234980
+      BackGround_ORG_9: -2854357771143632506
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
