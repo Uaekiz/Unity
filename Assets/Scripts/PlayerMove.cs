@@ -7,36 +7,27 @@ public class PlayerMove : MonoBehaviour
     private int moveDir = 0; // -1 = sol, 0 = dur, 1 = sağ
     bool left = false;
     private Rigidbody2D rb;
+    private PlayerAnimationController _animationController;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        _animationController = GetComponentInChildren<PlayerAnimationController>();
+
     }
 
-    void Update()
+    public void SetMovementDirection(int direction)
     {
-        moveDir = 0; 
+        moveDir = direction;
 
         // Ekranda dokunma varsa kontrol et
-        foreach (Touch touch in Input.touches)
+        if (direction != 0)
         {
-            if (touch.position.y < Screen.height / 6)
-            {
-                if (touch.position.x > Screen.width / 2) // Ekranın sağ tarafına dokunursa
-                {
-                    moveDir = 1; 
-                    left = false;
-                }
-                else if (touch.position.x < Screen.width / 2) // Ekran�n sol tarafına dokunursa
-                {
-                    moveDir = -1; 
-                    left = true;
-                }
-            }
+            left = direction < 0; // Eğer -1 ise sola bak
         }
-        
-        animator.SetInteger("moveDir", moveDir);
-        animator.SetBool("left", left);
+
+        _animationController.UpdateMovementAnimation(moveDir,left);
 
     }
 
