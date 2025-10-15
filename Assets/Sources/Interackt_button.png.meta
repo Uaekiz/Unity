@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: da763209f6f259f45aebf39c411c0fbe
+guid: 3517e7a3c668c49429295ccd31eacaa9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4571828015118065507
-    second: back_0
+      213: 342928865780847574
+    second: Interackt_button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: back_0
+      name: Interackt_button_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 12
-        width: 763
-        height: 249
+        x: 15
+        y: 15
+        width: 482
+        height: 482
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9065b094aa9d80c0800000000000000
-      internalID: -4571828015118065507
+      spriteID: 6d3581c8cf352c400800000000000000
+      internalID: 342928865780847574
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4dd1fc0eae1e56c43b03a8735488962e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      back_0: -4571828015118065507
+      Interackt_button_0: 342928865780847574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
