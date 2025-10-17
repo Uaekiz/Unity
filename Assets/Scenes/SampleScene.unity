@@ -3296,11 +3296,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1920634931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92d095b9b0049cf418460524b39e3149, type: 3}
+  m_Script: {fileID: 11500000, guid: e3c44a79b28a04541866c117bccd06a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactButton: {fileID: 416972466}
   isLocked: 0
+  targetSceneName: TheRoom
 --- !u!1 &1946538920
 GameObject:
   m_ObjectHideFlags: 0
