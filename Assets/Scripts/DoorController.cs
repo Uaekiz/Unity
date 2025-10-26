@@ -62,5 +62,13 @@ public class DoorController : MonoBehaviour
             // playDoorAnimation trigger'ýný tetikle
             doorAnimator.SetTrigger("playDoorAnimation");
         }
+
+        if(!isLocked)
+        {
+            OnSuccessfulInteraction();
+        }
+       
     }
+
+    protected virtual void OnSuccessfulInteraction() { }
 }
