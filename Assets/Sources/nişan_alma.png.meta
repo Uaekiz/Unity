@@ -128,10 +128,10 @@ TextureImporter:
       name: "ni\u015Fan_alma_0"
       rect:
         serializedVersion: 2
-        x: 51
-        y: 534
-        width: 462
-        height: 292
+        x: 0
+        y: 523
+        width: 513
+        height: 358
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: "ni\u015Fan_alma_1"
       rect:
         serializedVersion: 2
-        x: 534
-        y: 534
+        x: 523
+        y: 523
         width: 514
-        height: 320
+        height: 366
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: "ni\u015Fan_alma_2"
       rect:
         serializedVersion: 2
-        x: 1069
-        y: 534
+        x: 1047
+        y: 523
         width: 513
-        height: 330
+        height: 374
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,9 +195,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
+        y: 0
         width: 513
-        height: 340
+        height: 374
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: "ni\u015Fan_alma_4"
       rect:
         serializedVersion: 2
-        x: 555
-        y: 25
-        width: 441
-        height: 325
+        x: 523
+        y: 0
+        width: 513
+        height: 389
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
