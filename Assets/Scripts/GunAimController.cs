@@ -102,4 +102,13 @@ public class GunAimController : MonoBehaviour
         // Açýyý sýfýrda tut
         transform.localRotation = Quaternion.identity;
     }
+
+    public void ShootGun()
+    {
+        // Ateþ etme sinyalini Animator'a gönder
+        animator.SetTrigger("Shoot");
+
+        // NOT: Ateþ etme sesini, mermi çýkarma, hasar verme gibi diðer mantýklar buraya eklenecektir.
+        Debug.Log("Bang! Ateþ edildi.");
+    }
 }
