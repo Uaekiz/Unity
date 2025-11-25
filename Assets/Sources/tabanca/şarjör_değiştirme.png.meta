@@ -177,7 +177,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1568
+        y: 1586
         width: 513
         height: 352
       alignment: 0
@@ -198,8 +198,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_1"
       rect:
         serializedVersion: 2
-        x: 522
-        y: 1568
+        x: 528
+        y: 1586
         width: 514
         height: 348
       alignment: 0
@@ -220,8 +220,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_2"
       rect:
         serializedVersion: 2
-        x: 1242
-        y: 1568
+        x: 1254
+        y: 1586
         width: 317
         height: 392
       alignment: 0
@@ -242,8 +242,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_3"
       rect:
         serializedVersion: 2
-        x: 1768
-        y: 1568
+        x: 1786
+        y: 1586
         width: 314
         height: 397
       alignment: 0
@@ -264,8 +264,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_4"
       rect:
         serializedVersion: 2
-        x: 2294
-        y: 1568
+        x: 2318
+        y: 1586
         width: 310
         height: 400
       alignment: 0
@@ -287,7 +287,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 202
-        y: 1045
+        y: 1057
         width: 311
         height: 400
       alignment: 0
@@ -308,8 +308,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_6"
       rect:
         serializedVersion: 2
-        x: 636
-        y: 1045
+        x: 642
+        y: 1057
         width: 160
         height: 107
       alignment: 0
@@ -330,8 +330,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_7"
       rect:
         serializedVersion: 2
-        x: 725
-        y: 1045
+        x: 731
+        y: 1057
         width: 311
         height: 400
       alignment: 0
@@ -352,8 +352,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_8"
       rect:
         serializedVersion: 2
-        x: 1153
-        y: 1045
+        x: 1165
+        y: 1057
         width: 406
         height: 400
       alignment: 0
@@ -374,8 +374,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_9"
       rect:
         serializedVersion: 2
-        x: 1711
-        y: 1045
+        x: 1729
+        y: 1057
         width: 371
         height: 400
       alignment: 0
@@ -396,8 +396,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_10"
       rect:
         serializedVersion: 2
-        x: 2243
-        y: 1045
+        x: 2267
+        y: 1057
         width: 361
         height: 418
       alignment: 0
@@ -419,7 +419,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 151
-        y: 522
+        y: 528
         width: 362
         height: 418
       alignment: 0
@@ -440,8 +440,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_12"
       rect:
         serializedVersion: 2
-        x: 674
-        y: 522
+        x: 680
+        y: 528
         width: 362
         height: 418
       alignment: 0
@@ -462,8 +462,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_13"
       rect:
         serializedVersion: 2
-        x: 1197
-        y: 522
+        x: 1209
+        y: 528
         width: 362
         height: 418
       alignment: 0
@@ -484,8 +484,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_14"
       rect:
         serializedVersion: 2
-        x: 1713
-        y: 522
+        x: 1731
+        y: 528
         width: 369
         height: 433
       alignment: 0
@@ -506,8 +506,8 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_15"
       rect:
         serializedVersion: 2
-        x: 2237
-        y: 522
+        x: 2261
+        y: 528
         width: 367
         height: 433
       alignment: 0
@@ -550,7 +550,7 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_17"
       rect:
         serializedVersion: 2
-        x: 522
+        x: 528
         y: 0
         width: 514
         height: 354
@@ -572,7 +572,7 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_18"
       rect:
         serializedVersion: 2
-        x: 1045
+        x: 1057
         y: 0
         width: 514
         height: 357
@@ -594,7 +594,7 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_19"
       rect:
         serializedVersion: 2
-        x: 1568
+        x: 1586
         y: 0
         width: 514
         height: 357
@@ -616,7 +616,7 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_20"
       rect:
         serializedVersion: 2
-        x: 2091
+        x: 2115
         y: 0
         width: 513
         height: 357
