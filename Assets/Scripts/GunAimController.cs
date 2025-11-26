@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-// using System.Security.Cryptography; // Bu kütüphaneye ihtiyacýmýz yok, kaldýrdým.
+// using System.Security.Cryptography; // Bu kï¿½tï¿½phaneye ihtiyacï¿½mï¿½z yok, kaldï¿½rdï¿½m.
 
 public class GunAimController : MonoBehaviour
 {
@@ -8,25 +8,25 @@ public class GunAimController : MonoBehaviour
 
     private Animator animator;
 
-    // Joystick'in algýlanma eþiði
+    // Joystick'in algï¿½lanma eï¿½iï¿½i
     public float aimThreshold = 0.0001f;
 
-    // Yön kontrolü için özel deðiþken. Bu, animasyonun sadece bir kez baþlamasýný saðlar.
+    // Yï¿½n kontrolï¿½ iï¿½in ï¿½zel deï¿½iï¿½ken. Bu, animasyonun sadece bir kez baï¿½lamasï¿½nï¿½ saï¿½lar.
     private bool isCurrentlyAiming = false;
 
-    // Yatay (Sað/Sol) hareketin ne kadar kayacaðýný belirler
+    // Yatay (Saï¿½/Sol) hareketin ne kadar kayacaï¿½ï¿½nï¿½ belirler
     public float horizontalSensitivity = 6.0f;
-    // Dikey (Yukarý/Aþaðý) hareketin ne kadar kayacaðýný belirler
+    // Dikey (Yukarï¿½/Aï¿½aï¿½ï¿½) hareketin ne kadar kayacaï¿½ï¿½nï¿½ belirler
     public float verticalSensitivity = 1.0f;
 
-    // Kolun baþlangýç pozisyonunu tutmak için
+    // Kolun baï¿½langï¿½ï¿½ pozisyonunu tutmak iï¿½in
     private Vector3 initialPosition;
 
     void Start()
     {
         animator = GetComponent<Animator>();
 
-        // Baþlangýç pozisyonunu kaydetme
+        // Baï¿½langï¿½ï¿½ pozisyonunu kaydetme
         initialPosition = transform.localPosition;
     }
 
@@ -38,38 +38,38 @@ public class GunAimController : MonoBehaviour
 
         bool wantsToAim = inputMagnitude > aimThreshold;
 
-        // 1. Niþan Almaya Baþlama Aný (Joystick'e ilk dokunuþ)
+        // 1. Niï¿½an Almaya Baï¿½lama Anï¿½ (Joystick'e ilk dokunuï¿½)
         if (wantsToAim && !isCurrentlyAiming)
         {
             isCurrentlyAiming = true;
 
-            // ÝLERÝ geçiþ animasyonunu baþlatma sinyalini gönder (Holding -> Aiming Transition)
+            // ï¿½LERï¿½ geï¿½iï¿½ animasyonunu baï¿½latma sinyalini gï¿½nder (Holding -> Aiming Transition)
             animator.SetTrigger("StartAim");
 
-            // Pozisyonu kaydýr
+            // Pozisyonu kaydï¿½r
             AimPosition(horizontal, vertical);
         }
-        // 2. Niþan Almayý Býrakma Aný (Joystick'ten el çekildi)
+        // 2. Niï¿½an Almayï¿½ Bï¿½rakma Anï¿½ (Joystick'ten el ï¿½ekildi)
         else if (!wantsToAim && isCurrentlyAiming)
         {
             isCurrentlyAiming = false;
 
-            // GERÝ geçiþ animasyonunu baþlatma sinyalini gönder (Aim Hold Pose -> Holding Transition)
+            // GERï¿½ geï¿½iï¿½ animasyonunu baï¿½latma sinyalini gï¿½nder (Aim Hold Pose -> Holding Transition)
             animator.SetTrigger("StopAim");
 
-            // Pozisyonu sýfýrla (Yumuþakça geri döner)
+            // Pozisyonu sï¿½fï¿½rla (Yumuï¿½akï¿½a geri dï¿½ner)
             ResetPosition();
         }
-        // 3. Niþan Almaya Devam Ediliyorsa (Sadece pozisyonu güncelle)
+        // 3. Niï¿½an Almaya Devam Ediliyorsa (Sadece pozisyonu gï¿½ncelle)
         else if (isCurrentlyAiming)
         {
             AimPosition(horizontal, vertical);
         }
-        // 4. Normal Tutuþta Duruyorsa (Animasyon bitmiþ, pozisyon sýfýrlanýyor)
+        // 4. Normal Tutuï¿½ta Duruyorsa (Animasyon bitmiï¿½, pozisyon sï¿½fï¿½rlanï¿½yor)
         else
         {
             // ResetPosition metodu, isCurrentlyAiming false olsa bile 
-            // objenin tam olarak initialPosition'a dönmesini saðlar.
+            // objenin tam olarak initialPosition'a dï¿½nmesini saï¿½lar.
             ResetPosition();
         }
     }
@@ -78,37 +78,37 @@ public class GunAimController : MonoBehaviour
     {
         // YATAY KAYDIRMA HESAPLAMASI
         float offsetX = x * horizontalSensitivity;
-        // DÝKEY KAYDIRMA HESAPLAMASI
+        // Dï¿½KEY KAYDIRMA HESAPLAMASI
         float offsetY = y * verticalSensitivity;
 
-        // Yeni Kaydýrma Ofseti (X ve Y için farklý hassasiyet kullanýlarak oluþturulur)
+        // Yeni Kaydï¿½rma Ofseti (X ve Y iï¿½in farklï¿½ hassasiyet kullanï¿½larak oluï¿½turulur)
         Vector3 aimOffset = new Vector3(offsetX, offsetY, 0);
 
-        // Hedef pozisyon: Baþlangýç pozisyonu + Kaydýrma Ofseti
+        // Hedef pozisyon: Baï¿½langï¿½ï¿½ pozisyonu + Kaydï¿½rma Ofseti
         Vector3 targetPosition = initialPosition + aimOffset;
 
-        // Yumuþak hareket için Lerp kullan
+        // Yumuï¿½ak hareket iï¿½in Lerp kullan
         transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * 10f);
 
-        // Tabancanýn açýsýný sabit tut
+        // Tabancanï¿½n aï¿½ï¿½sï¿½nï¿½ sabit tut
         transform.localRotation = Quaternion.identity;
     }
 
     void ResetPosition()
     {
-        // Baþlangýç pozisyonuna geri dön (Objenin pozisyonu hala initialPosition'a doðru hareket ediyorsa devam eder)
+        // Baï¿½langï¿½ï¿½ pozisyonuna geri dï¿½n (Objenin pozisyonu hala initialPosition'a doï¿½ru hareket ediyorsa devam eder)
         transform.localPosition = Vector3.Lerp(transform.localPosition, initialPosition, Time.deltaTime * 5f);
 
-        // Açýyý sýfýrda tut
+        // Aï¿½ï¿½yï¿½ sï¿½fï¿½rda tut
         transform.localRotation = Quaternion.identity;
     }
 
     public void ShootGun()
     {
-        // Ateþ etme sinyalini Animator'a gönder
-        animator.SetTrigger("Shoot");
+        // Ateï¿½ etme sinyalini Animator'a gï¿½nder
+        animator.SetTrigger("shoot");
 
-        // NOT: Ateþ etme sesini, mermi çýkarma, hasar verme gibi diðer mantýklar buraya eklenecektir.
-        Debug.Log("Bang! Ateþ edildi.");
+        // NOT: Ateï¿½ etme sesini, mermi ï¿½ï¿½karma, hasar verme gibi diï¿½er mantï¿½klar buraya eklenecektir.
+        Debug.Log("Bang! Ateï¿½ edildi.");
     }
 }
