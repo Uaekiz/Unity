@@ -8,19 +8,18 @@ public class GunAimController : MonoBehaviour
     public Joystick joystick;
     private Animator animator;
 
-    [Header("Nişan Alma Hassasiyeti")]
-    public float aimThreshold = 0.1f; // Biraz tolerans tanıdık
+    // Durum Kontrolü
+    private bool isCurrentlyAiming = false;
+
+    [Header("Hassasiyet Ayarları")]
     public float horizontalSensitivity = 6.0f;
     public float verticalSensitivity = 1.0f;
     private Vector3 initialPosition;
-    
-    // Durum kontrolü (Senin eski değişkenin)
-    private bool isCurrentlyAiming = false;
 
-    [Header("Lazer ve Ateş Ayarları")]
+    [Header("Ateş ve Lazer Ayarları")]
     public Transform firePoint;       // Namlunun ucu (Inspector'dan ata)
     public LineRenderer lineRenderer; // Lazer çizgisi (Inspector'dan ata)
-    public LayerMask hitLayers;       // Neleri vurabilir?
+    public LayerMask hitLayers;       // Vurulabilir katmanlar
     public float range = 50f;         // Menzil
     public float fireRate = 0.25f;    // Atış hızı
     private float nextFireTime = 0f;
@@ -30,39 +29,35 @@ public class GunAimController : MonoBehaviour
         animator = GetComponent<Animator>();
         initialPosition = transform.localPosition;
 
-        // Lazeri başlangıçta kapat
         if (lineRenderer != null) lineRenderer.enabled = false;
     }
 
     void Update()
     {
+        // Joystick verilerini al (Pozisyon hesaplaması için)
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;
-        float inputMagnitude = new Vector2(horizontal, vertical).magnitude;
 
-        // Eşik değerini geçti mi?
-        bool wantsToAim = inputMagnitude > aimThreshold;
-
-        // --- SENİN ESKİ ANİMASYON MANTIĞIN ---
+        // --- İŞTE İSTEDİĞİN DEĞİŞİKLİK BURADA ---
+        // Eskiden magnitude > threshold diyorduk.
+        // Şimdi diyoruz ki: Joystick'e parmak değiyor mu?
+        // Değiyorsa (isTouched = true), hareket etmese bile nişan alıyordur.
+        bool wantsToAim = joystick.isTouched; 
 
         // 1. Nişan Almaya Başlama Anı
         if (wantsToAim && !isCurrentlyAiming)
         {
             isCurrentlyAiming = true;
+            if(animator != null) animator.SetTrigger("StartAim");
             
-            // Senin Trigger'ın: StartAim
-            if(animator != null) animator.SetTrigger("StartAim"); 
-
             AimPosition(horizontal, vertical);
         }
-        // 2. Nişan Almayı Bırakma Anı
+        // 2. Nişan Almayı Bırakma Anı (Parmak çekildi)
         else if (!wantsToAim && isCurrentlyAiming)
         {
             isCurrentlyAiming = false;
-
-            // Senin Trigger'ın: StopAim
             if(animator != null) animator.SetTrigger("StopAim");
-
+            
             ResetPosition();
         }
         // 3. Nişan Almaya Devam Ediliyorsa
@@ -77,7 +72,7 @@ public class GunAimController : MonoBehaviour
         }
     }
 
-    // --- SENİN ESKİ HAREKET FONKSİYONLARIN (AYNEN KORUNDU) ---
+    // --- SENİN ORİJİNAL HAREKET KODLARIN (DOKUNULMADI) ---
     void AimPosition(float x, float y)
     {
         float offsetX = x * horizontalSensitivity;
@@ -95,18 +90,16 @@ public class GunAimController : MonoBehaviour
         transform.localRotation = Quaternion.identity;
     }
 
-    // --- YENİ EKLENEN ATEŞ ETME FONKSİYONU ---
-    // UI Butonuna bunu bağlayacaksın
+    // --- ATEŞ ETME SİSTEMİ (LAZERLİ) ---
     public void ShootGun()
     {
-        // 1. GÜVENLİK KİLİDİ: Eğer karakter şu an nişan almıyorsa (isCurrentlyAiming false ise)
-        // Ateş etme tuşuna basılsa bile burası çalışmayı durdurur.
+        // EMNİYET: Elin joystickte değilse (nişan almıyorsan) ATEŞ ETME.
+        // Joystick ortada olsa bile elin üstündeyse 'isCurrentlyAiming' true olacağı için burası çalışır.
         if (!isCurrentlyAiming) 
         {
             return; 
         }
 
-        // 2. Zamanlayıcı Kontrolü
         if (Time.time >= nextFireTime)
         {
             StartCoroutine(FireProcess());
@@ -116,25 +109,25 @@ public class GunAimController : MonoBehaviour
 
     IEnumerator FireProcess()
     {
-        // Senin Trigger'ın: shoot
+        // Ateş Animasyonu
         if (animator != null) animator.SetTrigger("shoot");
 
-        // --- LAZER / RAYCAST İŞLEMİ ---
+        // Lazer ve Vuruş İşlemi
         if (lineRenderer != null)
         {
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, firePoint.position);
 
-            // Işın gönder
+            // Unity Ayarlarından "Physics 2D > Queries Start In Colliders" kapalı olsun!
             RaycastHit2D hit = Physics2D.Raycast(firePoint.position, firePoint.right, range, hitLayers);
 
             if (hit.collider != null)
             {
-                // Bir şeye çarptı
+                // Vurduk
                 lineRenderer.SetPosition(1, hit.point);
                 Debug.Log("Vurulan: " + hit.collider.name);
 
-                // Target scripti varsa hasar ver
+                // Hedef scripti varsa hasar ver
                 Target hedef = hit.collider.GetComponent<Target>();
                 if (hedef != null)
                 {
@@ -143,11 +136,10 @@ public class GunAimController : MonoBehaviour
             }
             else
             {
-                // Boşa gitti
+                // Boşa sıktık
                 lineRenderer.SetPosition(1, firePoint.position + firePoint.right * range);
             }
 
-            // Lazerin ekranda kalma süresi (Görsel efekt)
             yield return new WaitForSeconds(0.05f);
             lineRenderer.enabled = false;
         }

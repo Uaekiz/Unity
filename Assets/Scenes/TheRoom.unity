@@ -1619,7 +1619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GunAimController
   joystick: {fileID: 42956891}
-  aimThreshold: 0.1
   horizontalSensitivity: 6
   verticalSensitivity: 1
   firePoint: {fileID: 1597379017}
