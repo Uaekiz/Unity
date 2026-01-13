@@ -1,33 +1,37 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-// using System.Security.Cryptography; // Bu k�t�phaneye ihtiyac�m�z yok, kald�rd�m.
 
 public class GunAimController : MonoBehaviour
 {
+    [Header("Kontroller")]
     public Joystick joystick;
-
     private Animator animator;
 
-    // Joystick'in alg�lanma e�i�i
-    public float aimThreshold = 0.0001f;
-
-    // Y�n kontrol� i�in �zel de�i�ken. Bu, animasyonun sadece bir kez ba�lamas�n� sa�lar.
+    [Header("Nişan Alma Hassasiyeti")]
+    public float aimThreshold = 0.1f; // Biraz tolerans tanıdık
+    public float horizontalSensitivity = 6.0f;
+    public float verticalSensitivity = 1.0f;
+    private Vector3 initialPosition;
+    
+    // Durum kontrolü (Senin eski değişkenin)
     private bool isCurrentlyAiming = false;
 
-    // Yatay (Sa�/Sol) hareketin ne kadar kayaca��n� belirler
-    public float horizontalSensitivity = 6.0f;
-    // Dikey (Yukar�/A�a��) hareketin ne kadar kayaca��n� belirler
-    public float verticalSensitivity = 1.0f;
-
-    // Kolun ba�lang�� pozisyonunu tutmak i�in
-    private Vector3 initialPosition;
+    [Header("Lazer ve Ateş Ayarları")]
+    public Transform firePoint;       // Namlunun ucu (Inspector'dan ata)
+    public LineRenderer lineRenderer; // Lazer çizgisi (Inspector'dan ata)
+    public LayerMask hitLayers;       // Neleri vurabilir?
+    public float range = 50f;         // Menzil
+    public float fireRate = 0.25f;    // Atış hızı
+    private float nextFireTime = 0f;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-
-        // Ba�lang�� pozisyonunu kaydetme
         initialPosition = transform.localPosition;
+
+        // Lazeri başlangıçta kapat
+        if (lineRenderer != null) lineRenderer.enabled = false;
     }
 
     void Update()
@@ -36,79 +40,116 @@ public class GunAimController : MonoBehaviour
         float vertical = joystick.Vertical;
         float inputMagnitude = new Vector2(horizontal, vertical).magnitude;
 
+        // Eşik değerini geçti mi?
         bool wantsToAim = inputMagnitude > aimThreshold;
 
-        // 1. Ni�an Almaya Ba�lama An� (Joystick'e ilk dokunu�)
+        // --- SENİN ESKİ ANİMASYON MANTIĞIN ---
+
+        // 1. Nişan Almaya Başlama Anı
         if (wantsToAim && !isCurrentlyAiming)
         {
             isCurrentlyAiming = true;
+            
+            // Senin Trigger'ın: StartAim
+            if(animator != null) animator.SetTrigger("StartAim"); 
 
-            // �LER� ge�i� animasyonunu ba�latma sinyalini g�nder (Holding -> Aiming Transition)
-            animator.SetTrigger("StartAim");
-
-            // Pozisyonu kayd�r
             AimPosition(horizontal, vertical);
         }
-        // 2. Ni�an Almay� B�rakma An� (Joystick'ten el �ekildi)
+        // 2. Nişan Almayı Bırakma Anı
         else if (!wantsToAim && isCurrentlyAiming)
         {
             isCurrentlyAiming = false;
 
-            // GER� ge�i� animasyonunu ba�latma sinyalini g�nder (Aim Hold Pose -> Holding Transition)
-            animator.SetTrigger("StopAim");
+            // Senin Trigger'ın: StopAim
+            if(animator != null) animator.SetTrigger("StopAim");
 
-            // Pozisyonu s�f�rla (Yumu�ak�a geri d�ner)
             ResetPosition();
         }
-        // 3. Ni�an Almaya Devam Ediliyorsa (Sadece pozisyonu g�ncelle)
+        // 3. Nişan Almaya Devam Ediliyorsa
         else if (isCurrentlyAiming)
         {
             AimPosition(horizontal, vertical);
         }
-        // 4. Normal Tutu�ta Duruyorsa (Animasyon bitmi�, pozisyon s�f�rlan�yor)
+        // 4. Normal Duruş
         else
         {
-            // ResetPosition metodu, isCurrentlyAiming false olsa bile 
-            // objenin tam olarak initialPosition'a d�nmesini sa�lar.
             ResetPosition();
         }
     }
 
+    // --- SENİN ESKİ HAREKET FONKSİYONLARIN (AYNEN KORUNDU) ---
     void AimPosition(float x, float y)
     {
-        // YATAY KAYDIRMA HESAPLAMASI
         float offsetX = x * horizontalSensitivity;
-        // D�KEY KAYDIRMA HESAPLAMASI
         float offsetY = y * verticalSensitivity;
-
-        // Yeni Kayd�rma Ofseti (X ve Y i�in farkl� hassasiyet kullan�larak olu�turulur)
         Vector3 aimOffset = new Vector3(offsetX, offsetY, 0);
-
-        // Hedef pozisyon: Ba�lang�� pozisyonu + Kayd�rma Ofseti
         Vector3 targetPosition = initialPosition + aimOffset;
 
-        // Yumu�ak hareket i�in Lerp kullan
         transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * 10f);
-
-        // Tabancan�n a��s�n� sabit tut
         transform.localRotation = Quaternion.identity;
     }
 
     void ResetPosition()
     {
-        // Ba�lang�� pozisyonuna geri d�n (Objenin pozisyonu hala initialPosition'a do�ru hareket ediyorsa devam eder)
         transform.localPosition = Vector3.Lerp(transform.localPosition, initialPosition, Time.deltaTime * 5f);
-
-        // A��y� s�f�rda tut
         transform.localRotation = Quaternion.identity;
     }
 
+    // --- YENİ EKLENEN ATEŞ ETME FONKSİYONU ---
+    // UI Butonuna bunu bağlayacaksın
     public void ShootGun()
     {
-        // Ate� etme sinyalini Animator'a g�nder
-        animator.SetTrigger("shoot");
+        // 1. GÜVENLİK KİLİDİ: Eğer karakter şu an nişan almıyorsa (isCurrentlyAiming false ise)
+        // Ateş etme tuşuna basılsa bile burası çalışmayı durdurur.
+        if (!isCurrentlyAiming) 
+        {
+            return; 
+        }
 
-        // NOT: Ate� etme sesini, mermi ��karma, hasar verme gibi di�er mant�klar buraya eklenecektir.
-        Debug.Log("Bang! Ate� edildi.");
+        // 2. Zamanlayıcı Kontrolü
+        if (Time.time >= nextFireTime)
+        {
+            StartCoroutine(FireProcess());
+            nextFireTime = Time.time + fireRate;
+        }
+    }
+
+    IEnumerator FireProcess()
+    {
+        // Senin Trigger'ın: shoot
+        if (animator != null) animator.SetTrigger("shoot");
+
+        // --- LAZER / RAYCAST İŞLEMİ ---
+        if (lineRenderer != null)
+        {
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(0, firePoint.position);
+
+            // Işın gönder
+            RaycastHit2D hit = Physics2D.Raycast(firePoint.position, firePoint.right, range, hitLayers);
+
+            if (hit.collider != null)
+            {
+                // Bir şeye çarptı
+                lineRenderer.SetPosition(1, hit.point);
+                Debug.Log("Vurulan: " + hit.collider.name);
+
+                // Target scripti varsa hasar ver
+                Target hedef = hit.collider.GetComponent<Target>();
+                if (hedef != null)
+                {
+                    hedef.HasarAl(10f);
+                }
+            }
+            else
+            {
+                // Boşa gitti
+                lineRenderer.SetPosition(1, firePoint.position + firePoint.right * range);
+            }
+
+            // Lazerin ekranda kalma süresi (Görsel efekt)
+            yield return new WaitForSeconds(0.05f);
+            lineRenderer.enabled = false;
+        }
     }
 }
