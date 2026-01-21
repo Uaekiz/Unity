@@ -26,9 +26,10 @@ public class GunAimController : MonoBehaviour
 
     void Start()
     {
+        // Script ve Animator artık AYNI objede (holding) olduğu için:
         animator = GetComponent<Animator>();
-        initialPosition = transform.localPosition;
 
+        initialPosition = transform.localPosition;
         if (lineRenderer != null) lineRenderer.enabled = false;
     }
 
@@ -124,34 +125,28 @@ public class GunAimController : MonoBehaviour
 
     IEnumerator FireProcess()
     {
-        // Ateş Animasyonu
         if (animator != null) animator.SetTrigger("shoot");
 
-        // Lazer ve Vuruş İşlemi
         if (lineRenderer != null)
         {
             lineRenderer.enabled = true;
+
+            // --- GÜNCELLEME: Lazerin başlangıcını firePoint'e eşitle ---
+            // Eğer 'Use World Space' kapalıysa başlangıç noktasını Vector3.zero yapmalısın
             lineRenderer.SetPosition(0, firePoint.position);
 
-            // Unity Ayarlarından "Physics 2D > Queries Start In Colliders" kapalı olsun!
             RaycastHit2D hit = Physics2D.Raycast(firePoint.position, firePoint.right, range, hitLayers);
 
             if (hit.collider != null)
             {
-                // Vurduk
                 lineRenderer.SetPosition(1, hit.point);
-                Debug.Log("Vurulan: " + hit.collider.name);
 
-                // Hedef scripti varsa hasar ver
                 Target hedef = hit.collider.GetComponent<Target>();
-                if (hedef != null)
-                {
-                    hedef.HasarAl(10f);
-                }
+                if (hedef != null) hedef.HasarAl(10f);
             }
             else
             {
-                // Boşa sıktık
+                // Menzil sonuna kadar çiz
                 lineRenderer.SetPosition(1, firePoint.position + firePoint.right * range);
             }
 
