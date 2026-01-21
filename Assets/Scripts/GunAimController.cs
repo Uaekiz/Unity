@@ -34,6 +34,8 @@ public class GunAimController : MonoBehaviour
 
     void Update()
     {
+
+        if (isReloading) return;
         // Joystick verilerini al (Pozisyon hesaplaması için)
         float horizontal = joystick.Horizontal;
         float vertical = joystick.Vertical;
@@ -42,22 +44,22 @@ public class GunAimController : MonoBehaviour
         // Eskiden magnitude > threshold diyorduk.
         // Şimdi diyoruz ki: Joystick'e parmak değiyor mu?
         // Değiyorsa (isTouched = true), hareket etmese bile nişan alıyordur.
-        bool wantsToAim = joystick.isTouched; 
+        bool wantsToAim = joystick.isTouched;
 
         // 1. Nişan Almaya Başlama Anı
         if (wantsToAim && !isCurrentlyAiming)
         {
             isCurrentlyAiming = true;
-            if(animator != null) animator.SetTrigger("StartAim");
-            
+            if (animator != null) animator.SetTrigger("StartAim");
+
             AimPosition(horizontal, vertical);
         }
         // 2. Nişan Almayı Bırakma Anı (Parmak çekildi)
         else if (!wantsToAim && isCurrentlyAiming)
         {
             isCurrentlyAiming = false;
-            if(animator != null) animator.SetTrigger("StopAim");
-            
+            if (animator != null) animator.SetTrigger("StopAim");
+
             ResetPosition();
         }
         // 3. Nişan Almaya Devam Ediliyorsa
@@ -91,19 +93,32 @@ public class GunAimController : MonoBehaviour
     }
 
     // --- ATEŞ ETME SİSTEMİ (LAZERLİ) ---
+
+    public AmmoManager ammoManager;
     public void ShootGun()
     {
         // EMNİYET: Elin joystickte değilse (nişan almıyorsan) ATEŞ ETME.
         // Joystick ortada olsa bile elin üstündeyse 'isCurrentlyAiming' true olacağı için burası çalışır.
-        if (!isCurrentlyAiming) 
+        if (!isCurrentlyAiming)
         {
-            return; 
+            return;
+        }
+
+        if (ammoManager != null && !ammoManager.CanShoot())
+        {
+            Debug.Log("Mermi Bitti!");
+            return; // Mermi yoksa ateş etme, fonksiyonu burada bitir.
         }
 
         if (Time.time >= nextFireTime)
         {
             StartCoroutine(FireProcess());
             nextFireTime = Time.time + fireRate;
+
+            if (ammoManager != null)
+            {
+                ammoManager.DecreaseAmmo();
+            }
         }
     }
 
@@ -143,5 +158,31 @@ public class GunAimController : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
             lineRenderer.enabled = false;
         }
+    }
+
+    private bool isReloading = false;
+
+   
+
+    public void StartReload()
+    {
+        if (!isReloading)
+        {
+            StartCoroutine(ReloadRoutine());
+        }
+    }
+
+    IEnumerator ReloadRoutine()
+    {
+        isReloading = true;
+        isCurrentlyAiming = false; // Nişan almayı bırak
+
+        if (animator != null) animator.SetTrigger("reload");
+
+        // Animasyonun süresi kadar bekle (Örn: 1.5 saniye)
+        yield return new WaitForSeconds(2.16f);
+
+        ammoManager.ResetAmmo();
+        isReloading = false; // Joystick kilidini aç
     }
 }

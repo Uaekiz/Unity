@@ -97,7 +97,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -179,9 +179,9 @@ TextureImporter:
         x: 0
         y: 1586
         width: 513
-        height: 352
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,10 +200,10 @@ TextureImporter:
         serializedVersion: 2
         x: 528
         y: 1586
-        width: 514
-        height: 348
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -220,12 +220,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_2"
       rect:
         serializedVersion: 2
-        x: 1254
+        x: 1057
         y: 1586
-        width: 317
-        height: 392
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -242,12 +242,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_3"
       rect:
         serializedVersion: 2
-        x: 1786
+        x: 1586
         y: 1586
-        width: 314
-        height: 397
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -264,12 +264,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_4"
       rect:
         serializedVersion: 2
-        x: 2318
+        x: 2115
         y: 1586
-        width: 310
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -286,12 +286,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_5"
       rect:
         serializedVersion: 2
-        x: 202
+        x: 0
         y: 1057
-        width: 311
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -305,37 +305,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_6"
-      rect:
-        serializedVersion: 2
-        x: 642
-        y: 1057
-        width: 160
-        height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7602b958074b973d0800000000000000
-      internalID: -3208334864153894809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_7"
       rect:
         serializedVersion: 2
-        x: 731
+        x: 528
         y: 1057
-        width: 311
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -352,12 +330,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_8"
       rect:
         serializedVersion: 2
-        x: 1165
+        x: 1057
         y: 1057
-        width: 406
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -374,12 +352,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_9"
       rect:
         serializedVersion: 2
-        x: 1729
+        x: 1586
         y: 1057
-        width: 371
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -396,12 +374,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_10"
       rect:
         serializedVersion: 2
-        x: 2267
+        x: 2115
         y: 1057
-        width: 361
-        height: 418
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -418,12 +396,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_11"
       rect:
         serializedVersion: 2
-        x: 151
+        x: 0
         y: 528
-        width: 362
-        height: 418
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -440,12 +418,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_12"
       rect:
         serializedVersion: 2
-        x: 680
+        x: 528
         y: 528
-        width: 362
-        height: 418
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -462,12 +440,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_13"
       rect:
         serializedVersion: 2
-        x: 1209
+        x: 1057
         y: 528
-        width: 362
-        height: 418
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -484,12 +462,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_14"
       rect:
         serializedVersion: 2
-        x: 1731
+        x: 1586
         y: 528
-        width: 369
-        height: 433
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -506,12 +484,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_15"
       rect:
         serializedVersion: 2
-        x: 2261
+        x: 2115
         y: 528
-        width: 367
-        height: 433
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -528,12 +506,12 @@ TextureImporter:
       name: "\u015Farj\xF6r_de\u011Fi\u015Ftirme_16"
       rect:
         serializedVersion: 2
-        x: 141
+        x: 0
         y: 0
-        width: 372
+        width: 513
         height: 432
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -552,10 +530,10 @@ TextureImporter:
         serializedVersion: 2
         x: 528
         y: 0
-        width: 514
-        height: 354
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -574,10 +552,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1057
         y: 0
-        width: 514
-        height: 357
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -596,10 +574,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1586
         y: 0
-        width: 514
-        height: 357
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 513
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -619,9 +597,9 @@ TextureImporter:
         x: 2115
         y: 0
         width: 513
-        height: 357
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 432
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -638,7 +616,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7fe125d7f9b9f1544b3efce71f8c67a8
     internalID: 0
     vertices: []
     indices: 

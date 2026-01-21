@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 88958e914f7039f4ebd0fc9e6a54fa06
+guid: 3ae6017461809654c99eab16a6df6933
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5817195297628206902
-    second: "ni\u015Fan_alma_0"
-  - first:
-      213: 7003092724877497921
-    second: "ni\u015Fan_alma_1"
-  - first:
-      213: 4369202915349621152
-    second: "ni\u015Fan_alma_2"
-  - first:
-      213: -4139325879820981436
-    second: "ni\u015Fan_alma_3"
-  - first:
-      213: -1731962731479565646
-    second: "ni\u015Fan_alma_4"
+      213: -7593677356379428063
+    second: AmmoPanel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,111 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "ni\u015Fan_alma_0"
+      name: AmmoPanel_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 523
-        width: 513
-        height: 432
+        y: 247
+        width: 1024
+        height: 546
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 637b3386d44dab050800000000000000
-      internalID: 5817195297628206902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ni\u015Fan_alma_1"
-      rect:
-        serializedVersion: 2
-        x: 523
-        y: 523
-        width: 513
-        height: 432
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1461273babbff2160800000000000000
-      internalID: 7003092724877497921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ni\u015Fan_alma_2"
-      rect:
-        serializedVersion: 2
-        x: 1047
-        y: 523
-        width: 513
-        height: 432
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0a9e30907e682ac30800000000000000
-      internalID: 4369202915349621152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ni\u015Fan_alma_3"
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 513
-        height: 432
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 44b60bb1b092e86c0800000000000000
-      internalID: -4139325879820981436
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "ni\u015Fan_alma_4"
-      rect:
-        serializedVersion: 2
-        x: 523
-        y: 0
-        width: 513
-        height: 432
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2baf1f17215d6f7e0800000000000000
-      internalID: -1731962731479565646
+      spriteID: 12ba31a6da6dd9690800000000000000
+      internalID: -7593677356379428063
       vertices: []
       indices: 
       edges: []
@@ -238,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ab12b5ddca2142446871357f0f0d5d4a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "ni\u015Fan_alma_0": 5817195297628206902
-      "ni\u015Fan_alma_1": 7003092724877497921
-      "ni\u015Fan_alma_2": 4369202915349621152
-      "ni\u015Fan_alma_3": -4139325879820981436
-      "ni\u015Fan_alma_4": -1731962731479565646
+      AmmoPanel_0: -7593677356379428063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
