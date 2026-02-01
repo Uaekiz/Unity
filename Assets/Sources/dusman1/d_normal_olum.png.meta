@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 09c378c871a39614e8829f543a4193a6
+guid: e09f32510d2466849b4973fe73e19059
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4186077727224977546
-    second: ODA_0
+      213: -8569048433429725351
+    second: d_normal_olum_0
   - first:
-      213: 4153566873615887526
-    second: ODA_1
+      213: -119010484780601046
+    second: d_normal_olum_1
   - first:
-      213: 7431635809620722379
-    second: ODA_2
+      213: 4977535394141877209
+    second: d_normal_olum_2
   - first:
-      213: -6880832549167129232
-    second: ODA_3
+      213: 264698147979355122
+    second: d_normal_olum_3
   - first:
-      213: -6376494099571010878
-    second: ODA_4
+      213: 228419057951135594
+    second: d_normal_olum_4
   - first:
-      213: -2686501812362426360
-    second: ODA_5
+      213: 2935870729034517397
+    second: d_normal_olum_5
   - first:
-      213: 4792896737208779842
-    second: ODA_6
+      213: 7714853685551267836
+    second: d_normal_olum_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -131,145 +131,123 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ODA_0
-      rect:
-        serializedVersion: 2
-        x: 747
-        y: 883
-        width: 20
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 677a4926c7018e5c0800000000000000
-      internalID: -4186077727224977546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_1
+      name: d_normal_olum_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 335
-        width: 1024
-        height: 536
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ac64b4a01f64a930800000000000000
-      internalID: 4153566873615887526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_2
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 71
-        width: 126
-        height: 250
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bc20484f469722760800000000000000
-      internalID: 7431635809620722379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_3
-      rect:
-        serializedVersion: 2
-        x: 262
         y: 131
-        width: 35
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 1, w: 1}
+        width: 128
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07d92f3b04f5280a0800000000000000
-      internalID: -6880832549167129232
+      spriteID: 95fbd4eb9df941980800000000000000
+      internalID: -8569048433429725351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_4
+      name: d_normal_olum_2
       rect:
         serializedVersion: 2
-        x: 303
+        x: 134
         y: 131
-        width: 160
-        height: 132
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 117
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c212ba86642287a0800000000000000
-      internalID: -6376494099571010878
+      spriteID: 9d3b2c0a112c31540800000000000000
+      internalID: 4977535394141877209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_5
+      name: d_normal_olum_3
       rect:
         serializedVersion: 2
-        x: 547
-        y: 105
-        width: 94
-        height: 150
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 271
+        y: 131
+        width: 99
+        height: 111
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 808c1b9d5d0a7bad0800000000000000
-      internalID: -2686501812362426360
+      spriteID: 2f3630b20956ca300800000000000000
+      internalID: 264698147979355122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_6
+      name: d_normal_olum_4
       rect:
         serializedVersion: 2
-        x: 699
-        y: 77
-        width: 273
-        height: 210
+        x: 15
+        y: 3
+        width: 100
+        height: 102
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a675b194ce18b2300800000000000000
+      internalID: 228419057951135594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d_normal_olum_5
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 3
+        width: 101
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59bc1968fde4eb820800000000000000
+      internalID: 2935870729034517397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d_normal_olum_6
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 3
+        width: 101
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 244457a403ac38240800000000000000
-      internalID: 4792896737208779842
+      spriteID: cff756d4d8aa01b60800000000000000
+      internalID: 7714853685551267836
       vertices: []
       indices: 
       edges: []
@@ -288,7 +266,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc7a1e47e5060d748910c153dca289d6
+    spriteID: 3468915baf758e64281ed1252225cf14
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +276,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ODA_0: -4186077727224977546
-      ODA_1: 4153566873615887526
-      ODA_2: 7431635809620722379
-      ODA_3: -6880832549167129232
-      ODA_4: -6376494099571010878
-      ODA_5: -2686501812362426360
-      ODA_6: 4792896737208779842
+      d_normal_olum_0: -8569048433429725351
+      d_normal_olum_1: -119010484780601046
+      d_normal_olum_2: 4977535394141877209
+      d_normal_olum_3: 264698147979355122
+      d_normal_olum_4: 228419057951135594
+      d_normal_olum_5: 2935870729034517397
+      d_normal_olum_6: 7714853685551267836
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

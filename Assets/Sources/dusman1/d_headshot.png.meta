@@ -1,28 +1,37 @@
 fileFormatVersion: 2
-guid: 09c378c871a39614e8829f543a4193a6
+guid: 2e671eb0ff0b16e47bd6ded52503f0ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4186077727224977546
-    second: ODA_0
+      213: -7268956839872244440
+    second: d_headshot_0
   - first:
-      213: 4153566873615887526
-    second: ODA_1
+      213: 6102014504156371842
+    second: d_headshot_1
   - first:
-      213: 7431635809620722379
-    second: ODA_2
+      213: -7358229054732336084
+    second: d_headshot_2
   - first:
-      213: -6880832549167129232
-    second: ODA_3
+      213: -3341791411850083045
+    second: d_headshot_3
   - first:
-      213: -6376494099571010878
-    second: ODA_4
+      213: 8250770966117462545
+    second: d_headshot_4
   - first:
-      213: -2686501812362426360
-    second: ODA_5
+      213: -8799023340550603888
+    second: d_headshot_5
   - first:
-      213: 4792896737208779842
-    second: ODA_6
+      213: -1199142314635993181
+    second: d_headshot_6
+  - first:
+      213: 5742730553846401840
+    second: d_headshot_7
+  - first:
+      213: -2350893266108395264
+    second: d_headshot_8
+  - first:
+      213: 7415491289135438098
+    second: d_headshot_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -131,155 +140,221 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ODA_0
+      name: d_headshot_0
       rect:
         serializedVersion: 2
-        x: 747
-        y: 883
-        width: 20
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 30
+        y: 259
+        width: 65
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 677a4926c7018e5c0800000000000000
-      internalID: -4186077727224977546
+      spriteID: 825d4c7444a7f1b90800000000000000
+      internalID: -7268956839872244440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_1
+      name: d_headshot_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 335
-        width: 1024
-        height: 536
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 158
+        y: 259
+        width: 65
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ac64b4a01f64a930800000000000000
-      internalID: 4153566873615887526
+      spriteID: 28b95869cd5bea450800000000000000
+      internalID: 6102014504156371842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_2
+      name: d_headshot_2
       rect:
         serializedVersion: 2
-        x: 85
-        y: 71
-        width: 126
-        height: 250
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 286
+        y: 259
+        width: 65
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc20484f469722760800000000000000
-      internalID: 7431635809620722379
+      spriteID: c2488b809a152e990800000000000000
+      internalID: -7358229054732336084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_3
+      name: d_headshot_3
       rect:
         serializedVersion: 2
-        x: 262
+        x: 414
+        y: 259
+        width: 65
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b15893f9a629f91d0800000000000000
+      internalID: -3341791411850083045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d_headshot_4
+      rect:
+        serializedVersion: 2
+        x: 30
         y: 131
-        width: 35
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 1, w: 1}
+        width: 65
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07d92f3b04f5280a0800000000000000
-      internalID: -6880832549167129232
+      spriteID: 112b98eaa70a08270800000000000000
+      internalID: 8250770966117462545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_4
+      name: d_headshot_5
       rect:
         serializedVersion: 2
-        x: 303
+        x: 158
         y: 131
-        width: 160
-        height: 132
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 65
+        height: 88
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c212ba86642287a0800000000000000
-      internalID: -6376494099571010878
+      spriteID: 09b3c1814e693e580800000000000000
+      internalID: -8799023340550603888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_5
+      name: d_headshot_6
       rect:
         serializedVersion: 2
-        x: 547
-        y: 105
-        width: 94
-        height: 150
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 286
+        y: 131
+        width: 65
+        height: 93
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 808c1b9d5d0a7bad0800000000000000
-      internalID: -2686501812362426360
+      spriteID: 3af5bfc0b6acb5fe0800000000000000
+      internalID: -1199142314635993181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_6
+      name: d_headshot_7
       rect:
         serializedVersion: 2
-        x: 699
-        y: 77
-        width: 273
-        height: 210
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 414
+        y: 131
+        width: 65
+        height: 93
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 244457a403ac38240800000000000000
-      internalID: 4792896737208779842
+      spriteID: 03b0cce230742bf40800000000000000
+      internalID: 5742730553846401840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d_headshot_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 3
+        width: 65
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00150c0b703ff5fd0800000000000000
+      internalID: -2350893266108395264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: d_headshot_9
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 3
+        width: 66
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 219dbebd90e19e660800000000000000
+      internalID: 7415491289135438098
       vertices: []
       indices: 
       edges: []
@@ -288,7 +363,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc7a1e47e5060d748910c153dca289d6
+    spriteID: c491178c21daa7d4c8eced3f47494539
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +373,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ODA_0: -4186077727224977546
-      ODA_1: 4153566873615887526
-      ODA_2: 7431635809620722379
-      ODA_3: -6880832549167129232
-      ODA_4: -6376494099571010878
-      ODA_5: -2686501812362426360
-      ODA_6: 4792896737208779842
+      d_headshot_0: -7268956839872244440
+      d_headshot_1: 6102014504156371842
+      d_headshot_2: -7358229054732336084
+      d_headshot_3: -3341791411850083045
+      d_headshot_4: 8250770966117462545
+      d_headshot_5: -8799023340550603888
+      d_headshot_6: -1199142314635993181
+      d_headshot_7: 5742730553846401840
+      d_headshot_8: -2350893266108395264
+      d_headshot_9: 7415491289135438098
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
