@@ -123,6 +123,8 @@ public class GunAimController : MonoBehaviour
         }
     }
 
+    // GunAimController.cs içindeki FireProcess IEnumerator'ı
+
     IEnumerator FireProcess()
     {
         if (animator != null) animator.SetTrigger("shoot");
@@ -130,9 +132,6 @@ public class GunAimController : MonoBehaviour
         if (lineRenderer != null)
         {
             lineRenderer.enabled = true;
-
-            // --- GÜNCELLEME: Lazerin başlangıcını firePoint'e eşitle ---
-            // Eğer 'Use World Space' kapalıysa başlangıç noktasını Vector3.zero yapmalısın
             lineRenderer.SetPosition(0, firePoint.position);
 
             RaycastHit2D hit = Physics2D.Raycast(firePoint.position, firePoint.right, range, hitLayers);
@@ -140,13 +139,20 @@ public class GunAimController : MonoBehaviour
             if (hit.collider != null)
             {
                 lineRenderer.SetPosition(1, hit.point);
-
-                Target hedef = hit.collider.GetComponent<Target>();
-                if (hedef != null) hedef.HasarAl(10f);
+                
+                // --- YENİ KISIM: Düşmanı Bul ve Hasar Ver ---
+                EnemyAI dusman = hit.collider.GetComponent<EnemyAI>();
+                
+                if (dusman != null)
+                {
+                    // Vurulan collider'ı da gönderiyoruz (hit.collider)
+                    // Hasar miktarı: 21
+                    dusman.HasarAl(21f, hit.collider);
+                }
+                // -------------------------------------------
             }
             else
             {
-                // Menzil sonuna kadar çiz
                 lineRenderer.SetPosition(1, firePoint.position + firePoint.right * range);
             }
 
@@ -154,7 +160,6 @@ public class GunAimController : MonoBehaviour
             lineRenderer.enabled = false;
         }
     }
-
     private bool isReloading = false;
 
    
