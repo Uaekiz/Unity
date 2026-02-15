@@ -127,38 +127,44 @@ public class GunAimController : MonoBehaviour
 
     IEnumerator FireProcess()
     {
+        // Ateş animasyonu
         if (animator != null) animator.SetTrigger("shoot");
 
+        
+        // Bu komut, firePoint'in tam olduğu koordinattaki collider'ı bulur.
+        Collider2D hitCollider = Physics2D.OverlapPoint(firePoint.position, hitLayers);
+
+        // Görsel Efekt (Line Renderer yerine anlık bir "Flash" veya nokta koyabilirsin)
+        // Eğer LineRenderer kullanacaksan bile sadece namlu ucunda küçük bir çizgi olmalı.
         if (lineRenderer != null)
         {
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, firePoint.position);
-
-            RaycastHit2D hit = Physics2D.Raycast(firePoint.position, firePoint.right, range, hitLayers);
-
-            if (hit.collider != null)
-            {
-                lineRenderer.SetPosition(1, hit.point);
-                
-                // --- YENİ KISIM: Düşmanı Bul ve Hasar Ver ---
-                EnemyAI dusman = hit.collider.GetComponent<EnemyAI>();
-                
-                if (dusman != null)
-                {
-                    // Vurulan collider'ı da gönderiyoruz (hit.collider)
-                    // Hasar miktarı: 21
-                    dusman.HasarAl(21f, hit.collider);
-                }
-                // -------------------------------------------
-            }
-            else
-            {
-                lineRenderer.SetPosition(1, firePoint.position + firePoint.right * range);
-            }
-
-            yield return new WaitForSeconds(0.05f);
-            lineRenderer.enabled = false;
+            // Lazer ileri gitmez, sadece namlunun ucunda ufak bir parlama yapar
+            lineRenderer.SetPosition(1, firePoint.position + (Vector3.forward * 0.1f)); 
         }
+
+        if (hitCollider != null)
+        {
+            // BİR ŞEYİ VURDUK!
+            Debug.Log("Vurulan: " + hitCollider.name);
+
+            // Düşman scriptini al
+            EnemyAI dusman = hitCollider.GetComponent<EnemyAI>();
+            
+            if (dusman != null)
+            {
+                // Vurulan collider'ı gönderiyoruz (Kafa mı gövde mi anlasın diye)
+                dusman.HasarAl(10f, hitCollider); 
+            }
+        }
+        else
+        {
+            Debug.Log("Hiçbir Şey Vurulmadı!");
+        }
+
+        yield return new WaitForSeconds(0.05f);
+        if (lineRenderer != null) lineRenderer.enabled = false;
     }
     private bool isReloading = false;
 
