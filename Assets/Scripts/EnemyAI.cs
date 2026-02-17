@@ -234,6 +234,10 @@ public class EnemyAI : MonoBehaviour
     {
         isDead = true;
         StopAllCoroutines();
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.DusmanOldu();
+        }
         
         if (isHeadshot) animator.SetTrigger("Headshot");
         else animator.SetTrigger("Olum");

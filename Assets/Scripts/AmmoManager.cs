@@ -6,7 +6,6 @@ public class AmmoManager : MonoBehaviour
     public int currentAmmo = 15;
     public TextMeshProUGUI ammoText;
 
-    // YENÝ EKLEDÝÐÝMÝZ KISIM: Reload butonu referansý
     public GameObject reloadButton;
 
     void Start()
@@ -28,7 +27,7 @@ public class AmmoManager : MonoBehaviour
         }
     }
 
-    // YENÝ EKLEDÝÐÝMÝZ KISIM: Mermiyi fulleyen fonksiyon
+    // YENï¿½ EKLEDï¿½ï¿½ï¿½Mï¿½Z KISIM: Mermiyi fulleyen fonksiyon
     public void ResetAmmo()
     {
         currentAmmo = 15;
@@ -42,7 +41,7 @@ public class AmmoManager : MonoBehaviour
         if (currentAmmo <= 0)
         {
             ammoText.color = Color.red;
-            // Mermi 0 ise butonu göster
+            // Mermi 0 ise butonu gï¿½ster
             if (reloadButton != null) reloadButton.SetActive(true);
         }
         else
