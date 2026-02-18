@@ -155,7 +155,7 @@ public class GunAimController : MonoBehaviour
             if (dusman != null)
             {
                 // Vurulan collider'ı gönderiyoruz (Kafa mı gövde mi anlasın diye)
-                dusman.HasarAl(10f, hitCollider); 
+                dusman.HasarAl(21f, hitCollider); 
             }
         }
         else
