@@ -1,24 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Sahne yönetimi için gerekli
+using UnityEngine.SceneManagement; // Sahne yï¿½netimi iï¿½in gerekli
 
 public class SceneDoor : DoorController
 {
     [Header("Scene Loading")]
-    public string targetSceneName; // Inspector'dan hedef sahne adýný girin.
+    public string targetSceneName; // Inspector'dan hedef sahne adï¿½nï¿½ girin.
 
-    // DoorController'daki TryToOpen() metodu isLocked kontrolünden geçtikten sonra
-    // OnSuccessfulInteraction() metodunu çaðýrýr. Biz onu geçersiz kýlacaðýz (override).
     protected override void OnSuccessfulInteraction()
     {
-        base.OnSuccessfulInteraction(); // Temel sýnýfýn mantýðýný çalýþtýr (þimdilik boþ)
-
-        //// Butonu gizle
-        //if (interactButton != null)
-        //{
-        //    interactedButton.SetActive(false);
-        //}
-
-        // Sahneyi yükle
+        base.OnSuccessfulInteraction(); 
         SceneManager.LoadScene(targetSceneName);
     }
 }
