@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     private float _minXLimit;
     private float _maxXLimit;
 
-    // YENİ EKLEME: Karakterin yarı genişliğini hesaplamak için
+    public static GameObject aktifEtkilesimObjesi;
     private float _charHalfWidth;
 
     void Start()
