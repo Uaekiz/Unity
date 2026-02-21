@@ -220,11 +220,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 713
-        y: 323
-        width: 274
-        height: 212
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        y: 324
+        width: 273
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -242,11 +242,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 699
-        y: 75
-        width: 274
-        height: 212
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        y: 76
+        width: 273
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -279,6 +279,7 @@ TextureImporter:
       dolaplar_3: 4474165732474980254
       dolaplar_4: 5769318558331649686
       dolaplar_5: 1583899254217745117
+      dolaplar_6: -630790394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

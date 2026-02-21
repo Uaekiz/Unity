@@ -293,9 +293,9 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_6
       rect:
         serializedVersion: 2
-        x: 753
+        x: 727
         y: 519
-        width: 12
+        width: 64
         height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -381,10 +381,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_10
       rect:
         serializedVersion: 2
-        x: 905
-        y: 519
-        width: 42
-        height: 30
+        x: 885
+        y: 503
+        width: 70
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

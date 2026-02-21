@@ -1,19 +1,19 @@
 using UnityEngine;
-using UnityEngine.UI; // UI kütüphanesini ekliyoruz
+using UnityEngine.UI; // UI kï¿½tï¿½phanesini ekliyoruz
 
 public class DoorController : MonoBehaviour
 {
-    private Animator doorAnimator; // Kapý animatörü
-    public GameObject interactButton; // Etkileþim butonu referansý
+    private Animator doorAnimator; // Kapï¿½ animatï¿½rï¿½
+    public GameObject interactButton; // Etkileï¿½im butonu referansï¿½
     public bool isLocked;
     private Button _interactButtonComponent;
 
-    // Animator Controller'daki animasyon parametresini buraya yazýn
+    // Animator Controller'daki animasyon parametresini buraya yazï¿½n
 
     void Start()
     {
         doorAnimator = GetComponent<Animator>();
-        // Butonu baþlangýçta görünmez yap
+        // Butonu baï¿½langï¿½ï¿½ta gï¿½rï¿½nmez yap
         if (interactButton != null)
         {
             _interactButtonComponent = interactButton.GetComponent<Button>();
@@ -25,41 +25,50 @@ public class DoorController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // YENÄ° EKLENEN KISIM: Butonun sahibi benim! HafÄ±zaya yaz.
+            PlayerMove.aktifEtkilesimObjesi = this.gameObject;
+
             if (_interactButtonComponent != null)
             {
-                // 1. Önceki tüm dinleyicileri (baþka kapýlara ait olabilir) temizle.
+                // 1. Ã–nceki tÃ¼m dinleyicileri (baÅŸka kapÄ±lara ait olabilir) temizle.
                 _interactButtonComponent.onClick.RemoveAllListeners();
 
-                // 2. Butonun OnClick olayýna, bu kapýnýn TryToOpen metodunu ekle.
-                // Dinamik olarak bu GameObject'in TryToOpen metodunu baðlýyoruz.
+                // 2. Butonun OnClick olayÄ±na, bu kapÄ±nÄ±n TryToOpen metodunu ekle.
                 _interactButtonComponent.onClick.AddListener(TryToOpen);
 
-                // 3. Butonu görünür yap
+                // 3. Butonu gÃ¶rÃ¼nÃ¼r yap
                 interactButton.SetActive(true);
             }
         }
     }
 
-    // Karakter kapýnýn trigger alanýndan çýktýðýnda
+    // Karakter kapÄ±nÄ±n trigger alanÄ±ndan Ã§Ä±ktÄ±ÄŸÄ±nda
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            if (_interactButtonComponent != null)
+            // YENÄ° EKLENEN KISIM: Butonu sadece asÄ±l sahibi bensem gizle!
+            if (PlayerMove.aktifEtkilesimObjesi == this.gameObject)
             {
-                // Butonu gizlerken, butondan baðlantýyý SÖK.
-                _interactButtonComponent.onClick.RemoveAllListeners();
-                interactButton.SetActive(false);
+                if (_interactButtonComponent != null)
+                {
+                    // Butonu gizlerken, butondan baÄŸlantÄ±yÄ± SÃ–K.
+                    _interactButtonComponent.onClick.RemoveAllListeners();
+                    interactButton.SetActive(false);
+                }
+                
+                // Sahibi kalmadÄ± diye belirt
+                PlayerMove.aktifEtkilesimObjesi = null;
             }
         }
     }
 
-    // Butona basýldýðýnda çaðrýlacak metot
+    // Butona basï¿½ldï¿½ï¿½ï¿½nda ï¿½aï¿½rï¿½lacak metot
     public void TryToOpen()
     {
         if (doorAnimator != null)
         {
-            // playDoorAnimation trigger'ýný tetikle
+            // playDoorAnimation trigger'ï¿½nï¿½ tetikle
             doorAnimator.SetTrigger("playDoorAnimation");
         }
 
