@@ -19,29 +19,26 @@ public class EsyaSistemi : MonoBehaviour
     }
     public List<EsyaBilgisi> esyaListesi;
 
-    [Header("Resimler (Spriteler)")]
+    [Header("Resimler")]
     public Sprite kapaliResim;
     public Sprite acikBosResim;
     public Sprite acikDoluResim;
 
     [Header("Bulmaca Ayarları")]
     public bool buBirBulmacaMi = false;
-    [Tooltip("Hiyerarşideki panelin adını birebir yazın (Örn: Panel_Oda)")]
     public string acilacakPanelIsmi;
 
     private SpriteRenderer spriteRenderer;
     private bool isAcik = false;
+    private GameObject cachedPanel; // Paneli bir kez bulup hafızada tutuyorum (optimizeyşınss beybii huhuww)
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        isAcik = false;
         GorunumuGuncelle();
 
         if (koridordaMi && elButonu != null)
-        {
             elButonu.gameObject.SetActive(false);
-        }
     }
 
     void OnMouseDown()
@@ -49,6 +46,7 @@ public class EsyaSistemi : MonoBehaviour
         if (!koridordaMi) EtkilesimeGir();
     }
 
+    // --- TETİKLEYİCİLER (Trigger) ---
     void OnTriggerEnter2D(Collider2D temas)
     {
         if (koridordaMi && temas.CompareTag("Player"))
@@ -65,84 +63,59 @@ public class EsyaSistemi : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D temas)
     {
-        if (koridordaMi && temas.CompareTag("Player"))
+        if (koridordaMi && temas.CompareTag("Player") && PlayerMove.aktifEtkilesimObjesi == this.gameObject)
         {
-            if (PlayerMove.aktifEtkilesimObjesi == this.gameObject)
-            {
-                if (elButonu != null)
-                {
-                    elButonu.gameObject.SetActive(false);
-                    elButonu.onClick.RemoveAllListeners();
-                }
-                PlayerMove.aktifEtkilesimObjesi = null;
-            }
+            if (elButonu != null) elButonu.gameObject.SetActive(false);
+            PlayerMove.aktifEtkilesimObjesi = null;
         }
     }
 
     public void EtkilesimeGir()
     {
-        // --- 1. BULMACA PANELİ MANTIĞI (İsme Göre Bulma) ---
-        if (buBirBulmacaMi && !string.IsNullOrEmpty(acilacakPanelIsmi))
+        // 1. BULMACA MANTIĞI 
+        if (buBirBulmacaMi)
         {
-            GameObject bulunanPanel = null;
+            if (cachedPanel == null && EnvanterManager.Instance != null)
+                cachedPanel = DerinlerdeAra(EnvanterManager.Instance.transform, acilacakPanelIsmi);
 
-            // 1. Önce EnvanterManager'ın altında (ne kadar derinde olursa olsun) ara
-            if (EnvanterManager.Instance != null)
-            {
-                // Bu fonksiyon alt objelerin içinde de arama yapar
-                bulunanPanel = DerinlerdeAra(EnvanterManager.Instance.transform, acilacakPanelIsmi);
-            }
-
-            if (bulunanPanel != null)
-            {
-                bulunanPanel.SetActive(true);
-            }
-            else
-            {
-                Debug.LogError("HATA: '" + acilacakPanelIsmi + "' isimli panel hiçbir yerde bulunamadı!");
-            }
+            if (cachedPanel != null) cachedPanel.SetActive(true);
         }
 
-        // --- 2. KUTU AÇILMA / EŞYA ALMA MANTIĞI ---
+        bool envanterDoluMu = HepsiniAldikMi();
+
         if (!isAcik)
         {
             isAcik = true;
-            GorunumuGuncelle();
         }
         else
         {
-            if (icindeEsyaVarMi && !HepsiniAldikMi())
+            if (icindeEsyaVarMi && !envanterDoluMu)
             {
                 foreach (var esya in esyaListesi)
                 {
                     GlobalData.DurumKaydet(esya.esyaID, true);
-                    Debug.Log(esya.miktar + " adet " + esya.esyaID + " alındı!");
+                    Debug.Log($"{esya.miktar} adet {esya.esyaID} alındı!");
                 }
 
                 if (EnvanterManager.Instance != null)
-                {
                     EnvanterManager.Instance.ArayuzuGuncelle();
-                }
-
-                GorunumuGuncelle();
             }
             else
             {
                 isAcik = false;
-                GorunumuGuncelle();
             }
         }
+
+        GorunumuGuncelle(); 
     }
 
-    // YENİ YARDIMCI FONKSİYON: Objeyi çocukların içinde ismen arar
     private GameObject DerinlerdeAra(Transform parent, string targetName)
     {
+        if (string.IsNullOrEmpty(targetName)) return null;
+
         foreach (Transform child in parent.GetComponentsInChildren<Transform>(true))
         {
-            if (child.name == targetName)
-            {
-                return child.gameObject;
-            }
+            if (child.name == targetName) return child.gameObject;
         }
         return null;
     }
@@ -167,14 +140,7 @@ public class EsyaSistemi : MonoBehaviour
         }
         else
         {
-            if (icindeEsyaVarMi && !HepsiniAldikMi())
-            {
-                spriteRenderer.sprite = acikDoluResim;
-            }
-            else
-            {
-                spriteRenderer.sprite = acikBosResim;
-            }
+            spriteRenderer.sprite = (icindeEsyaVarMi && !HepsiniAldikMi()) ? acikDoluResim : acikBosResim;
         }
     }
 }

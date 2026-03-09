@@ -3,32 +3,50 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup))]
+[RequireComponent(typeof(RectTransform))]
 public class BulmacaSurukle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private Vector3 baslangicPozisyonu;
+    private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    public string esyaID; // Burasý "KontrolKalemi" olmalý (boþluksuz!)
+    private Canvas canvas;
+    private Vector2 baslangicPozisyonu;
+
+    [Header("Eþya Kimliði")]
+    public string esyaID; // EnvanterManager ve SlotID ile birebir ayný olmalý
 
     void Awake()
     {
+        rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+
+        canvas = GetComponentInParent<Canvas>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        baslangicPozisyonu = transform.position; // Dönüþ yerini hatýrla
-        canvasGroup.blocksRaycasts = false;      // Altýndaki slotun bizi görmesini saðla
-        canvasGroup.alpha = 0.7f;                // Sürüklerken biraz þeffaf yap
+        // Baþlangýç koordinatlarýný kaydet (anchoredPosition kullanýmý UI için daha stabildir)
+        baslangicPozisyonu = rectTransform.anchoredPosition;
+
+        // Sürüklenen eþyayý hiyerarþide en alta al ki diðer slotlarýn ÜSTÜNDE görünsün
+        transform.SetAsLastSibling();
+
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.alpha = 0.6f; // Sürükleme hissi için biraz daha þeffaflýk
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition; // Fareyi takip et
+        if (canvas != null)
+        {
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.position = baslangicPozisyonu; // Eþyayý her zaman yerine geri gönder
+        // Eþyayý baþlangýç yerine (slotuna) geri gönder
+        rectTransform.anchoredPosition = baslangicPozisyonu;
+
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1f;
     }

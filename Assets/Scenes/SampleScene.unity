@@ -1451,9 +1451,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
   tip: 0
+  slotID: O_Sigorta_Slot
+  "sokmeArac\u0131ID": Kontrol Kalemi
+  "kabloTamirArac\u0131ID": Bant
   hedefLamba: {fileID: 0}
   yananLambaResmi: {fileID: 0}
-  slotID: O_Sigorta_Slot
   sokulmusResim: {fileID: -1742096869, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   tamirResim: {fileID: 0}
   sokunceEsyaVersinMi: 1
@@ -2076,9 +2078,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
   tip: 0
+  slotID: O_Kondaktor_Slot
+  "sokmeArac\u0131ID": Kontrol Kalemi
+  "kabloTamirArac\u0131ID": Bant
   hedefLamba: {fileID: 0}
   yananLambaResmi: {fileID: 0}
-  slotID: O_Kondaktor_Slot
   sokulmusResim: {fileID: 781644217, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   tamirResim: {fileID: 0}
   sokunceEsyaVersinMi: 1
@@ -2093,6 +2097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619089994}
   - component: {fileID: 619089993}
+  - component: {fileID: 619089996}
   - component: {fileID: 619089992}
   - component: {fileID: 619089995}
   m_Layer: 5
@@ -2174,10 +2179,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487067fcc76a6cb4893823035c99ec19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaEnvanterSistemi
-  slotKontrolKalemi: {fileID: 1397487725}
-  slotBant: {fileID: 1405010093}
-  slotSigorta: {fileID: 1779842413}
-  slotKondaktor: {fileID: 2083707949}
+  bulmacaSlotlari:
+  - esyaID: Kontrol Kalemi
+    slotUI: {fileID: 1397487725}
+  - esyaID: Bant
+    slotUI: {fileID: 1405010093}
+  - esyaID: Sigorta
+    slotUI: {fileID: 1779842413}
+  - esyaID: Kondaktor
+    slotUI: {fileID: 2083707949}
+--- !u!225 &619089996
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619089991}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -4083,10 +4105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487067fcc76a6cb4893823035c99ec19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaEnvanterSistemi
-  slotKontrolKalemi: {fileID: 438598643}
-  slotBant: {fileID: 0}
-  slotSigorta: {fileID: 0}
-  slotKondaktor: {fileID: 0}
+  bulmacaSlotlari: []
 --- !u!1 &1320084439
 GameObject:
   m_ObjectHideFlags: 0
@@ -4611,9 +4630,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
   tip: 0
+  slotID: K_Sigorta_Slot
+  "sokmeArac\u0131ID": Kontrol Kalemi
+  "kabloTamirArac\u0131ID": Bant
   hedefLamba: {fileID: 1072317501}
   yananLambaResmi: {fileID: -6152847476200237124, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
-  slotID: K_Sigorta_Slot
   sokulmusResim: {fileID: -1742096869, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   tamirResim: {fileID: 8564167311176726416, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   sokunceEsyaVersinMi: 0
@@ -4839,9 +4860,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
   tip: 1
+  slotID: K_Kondaktor_Slot
+  "sokmeArac\u0131ID": Kontrol Kalemi
+  "kabloTamirArac\u0131ID": Bant
   hedefLamba: {fileID: 208066960}
   yananLambaResmi: {fileID: -602898634856900701, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
-  slotID: K_Kondaktor_Slot
   sokulmusResim: {fileID: 781644217, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   tamirResim: {fileID: 2967404733043378509, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   sokunceEsyaVersinMi: 0
@@ -5105,6 +5128,14 @@ MonoBehaviour:
   bozukGorsel: {fileID: 5604639316501108491, guid: bf68256c0e85820488bdf1ea82b4fe20, type: 3}
   calisirGorsel: {fileID: 4569151267882470824, guid: 53e6303e9fb76ff4db68dd9ea37ab41c, type: 3}
   asansorAnimator: {fileID: 1563514127}
+  acilmaTriggerIsmi: acilma
+  asansorPaneli: {fileID: 619089991}
+  panelCanvasGroup: {fileID: 619089996}
+  panelCikisButonu: {fileID: 1424131067}
+  kontrolIDleri:
+  - T_K_Sigorta_Slot
+  - T_K_Kondaktor_Slot
+  - T_K_Kablo_Slot
 --- !u!95 &1563514127
 Animator:
   serializedVersion: 7
@@ -5437,8 +5468,8 @@ MonoBehaviour:
   icindeEsyaVarMi: 0
   esyaListesi: []
   kapaliResim: {fileID: 721820678434150371, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
-  acikBosResim: {fileID: 7823365451709177680, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
-  acikDoluResim: {fileID: -5413670565146841847, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
+  acikBosResim: {fileID: 721820678434150371, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
+  acikDoluResim: {fileID: 721820678434150371, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   buBirBulmacaMi: 1
   acilacakPanelIsmi: Panel_Asansor
 --- !u!212 &1780083153
@@ -6276,9 +6307,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
   tip: 2
+  slotID: K_Kablo_Slot
+  "sokmeArac\u0131ID": Kontrol Kalemi
+  "kabloTamirArac\u0131ID": Bant
   hedefLamba: {fileID: 1320084441}
   yananLambaResmi: {fileID: 7339715108912728323, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
-  slotID: K_Kablo_Slot
   sokulmusResim: {fileID: 0}
   tamirResim: {fileID: 8787750851402300873, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   sokunceEsyaVersinMi: 0
