@@ -1,28 +1,13 @@
 fileFormatVersion: 2
-guid: 09c378c871a39614e8829f543a4193a6
+guid: 1c0b1353b80fcab47a67944ce9bfd73a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4186077727224977546
-    second: ODA_0
+      213: -7087714431287454690
+    second: "sa\u011F_sol_0"
   - first:
-      213: 4153566873615887526
-    second: ODA_1
-  - first:
-      213: 7431635809620722379
-    second: ODA_2
-  - first:
-      213: -6880832549167129232
-    second: ODA_3
-  - first:
-      213: -6376494099571010878
-    second: ODA_4
-  - first:
-      213: -2686501812362426360
-    second: ODA_5
-  - first:
-      213: 4792896737208779842
-    second: ODA_6
+      213: -479487534127162065
+    second: "sa\u011F_sol_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -127,39 +112,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ODA_0
+      name: "sa\u011F_sol_0"
       rect:
         serializedVersion: 2
-        x: 734
-        y: 626
-        width: 38
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 677a4926c7018e5c0800000000000000
-      internalID: -4186077727224977546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 335
-        width: 1024
-        height: 536
+        x: 56
+        y: 136
+        width: 144
+        height: 104
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,64 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ac64b4a01f64a930800000000000000
-      internalID: 4153566873615887526
+      spriteID: e1493bde64163ad90800000000000000
+      internalID: -7087714431287454690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_2
+      name: "sa\u011F_sol_1"
       rect:
         serializedVersion: 2
-        x: 85
-        y: 71
-        width: 126
-        height: 250
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bc20484f469722760800000000000000
-      internalID: 7431635809620722379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_3
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 131
-        width: 35
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 1, w: 1}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07d92f3b04f5280a0800000000000000
-      internalID: -6880832549167129232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_4
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 131
-        width: 160
-        height: 132
+        x: 56
+        y: 16
+        width: 144
+        height: 104
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,52 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c212ba86642287a0800000000000000
-      internalID: -6376494099571010878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_5
-      rect:
-        serializedVersion: 2
-        x: 547
-        y: 105
-        width: 94
-        height: 150
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 808c1b9d5d0a7bad0800000000000000
-      internalID: -2686501812362426360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_6
-      rect:
-        serializedVersion: 2
-        x: 699
-        y: 76
-        width: 273
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 244457a403ac38240800000000000000
-      internalID: 4792896737208779842
+      spriteID: f2d5f1ec0a48859f0800000000000000
+      internalID: -479487534127162065
       vertices: []
       indices: 
       edges: []
@@ -288,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc7a1e47e5060d748910c153dca289d6
+    spriteID: 474d91f088add72478a7e589a4321f00
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ODA_0: -4186077727224977546
-      ODA_1: 4153566873615887526
-      ODA_2: 7431635809620722379
-      ODA_3: -6880832549167129232
-      ODA_4: -6376494099571010878
-      ODA_5: -2686501812362426360
-      ODA_6: 4792896737208779842
+      "sa\u011F_sol_0": -7087714431287454690
+      "sa\u011F_sol_1": -479487534127162065
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

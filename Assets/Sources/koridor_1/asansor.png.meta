@@ -1,28 +1,61 @@
 fileFormatVersion: 2
-guid: 09c378c871a39614e8829f543a4193a6
+guid: 53e6303e9fb76ff4db68dd9ea37ab41c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4186077727224977546
-    second: ODA_0
+      213: 4569151267882470824
+    second: asansor_0
   - first:
-      213: 4153566873615887526
-    second: ODA_1
+      213: -1033496068003384883
+    second: asansor_1
   - first:
-      213: 7431635809620722379
-    second: ODA_2
+      213: -6388186570496086113
+    second: asansor_2
   - first:
-      213: -6880832549167129232
-    second: ODA_3
+      213: 1932507767864564610
+    second: asansor_3
   - first:
-      213: -6376494099571010878
-    second: ODA_4
+      213: 8347815743664983569
+    second: asansor_4
   - first:
-      213: -2686501812362426360
-    second: ODA_5
+      213: -1122519283450034687
+    second: asansor_5
   - first:
-      213: 4792896737208779842
-    second: ODA_6
+      213: -4721704977789986282
+    second: asansor_6
+  - first:
+      213: 4237631877916242039
+    second: asansor_7
+  - first:
+      213: -7697260296844788912
+    second: asansor_8
+  - first:
+      213: 1541424210914872381
+    second: asansor_9
+  - first:
+      213: 9008328201693296977
+    second: asansor_10
+  - first:
+      213: 4191485427904900790
+    second: asansor_11
+  - first:
+      213: -4198763594738595639
+    second: asansor_12
+  - first:
+      213: 7546393951133455317
+    second: asansor_13
+  - first:
+      213: -6006714688141860293
+    second: asansor_14
+  - first:
+      213: 2503817809440825388
+    second: asansor_15
+  - first:
+      213: -7465814216780502915
+    second: asansor_16
+  - first:
+      213: 765020721222550698
+    second: asansor_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -127,39 +160,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ODA_0
+      name: asansor_0
       rect:
         serializedVersion: 2
-        x: 734
-        y: 626
-        width: 38
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 677a4926c7018e5c0800000000000000
-      internalID: -4186077727224977546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 335
-        width: 1024
-        height: 536
+        x: 155
+        y: 1189
+        width: 213
+        height: 208
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,64 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ac64b4a01f64a930800000000000000
-      internalID: 4153566873615887526
+      spriteID: 8ad0927aed2e86f30800000000000000
+      internalID: 4569151267882470824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_2
+      name: asansor_2
       rect:
         serializedVersion: 2
-        x: 85
-        y: 71
-        width: 126
-        height: 250
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bc20484f469722760800000000000000
-      internalID: 7431635809620722379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_3
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 131
-        width: 35
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 1, w: 1}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07d92f3b04f5280a0800000000000000
-      internalID: -6880832549167129232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_4
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 131
-        width: 160
-        height: 132
+        x: 667
+        y: 1189
+        width: 213
+        height: 208
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c212ba86642287a0800000000000000
-      internalID: -6376494099571010878
+      spriteID: f9fe8a2092a9857a0800000000000000
+      internalID: -6388186570496086113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_5
+      name: asansor_4
       rect:
         serializedVersion: 2
-        x: 547
-        y: 105
-        width: 94
-        height: 150
+        x: 1179
+        y: 1189
+        width: 213
+        height: 208
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 808c1b9d5d0a7bad0800000000000000
-      internalID: -2686501812362426360
+      spriteID: 11e8093b03669d370800000000000000
+      internalID: 8347815743664983569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_6
+      name: asansor_6
       rect:
         serializedVersion: 2
-        x: 699
-        y: 76
-        width: 273
-        height: 211
+        x: 155
+        y: 677
+        width: 213
+        height: 208
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +258,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 244457a403ac38240800000000000000
-      internalID: 4792896737208779842
+      spriteID: 61a52a0e652297eb0800000000000000
+      internalID: -4721704977789986282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asansor_8
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 677
+        width: 213
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b39d6ba86dd2590800000000000000
+      internalID: -7697260296844788912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asansor_10
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 677
+        width: 213
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 159ff0275c2040d70800000000000000
+      internalID: 9008328201693296977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asansor_12
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 165
+        width: 213
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c883cfa1cefab5c0800000000000000
+      internalID: -4198763594738595639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asansor_14
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 165
+        width: 213
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32ee2ae0dcd3aca0800000000000000
+      internalID: -6006714688141860293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asansor_16
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 165
+        width: 213
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78acb18689146890800000000000000
+      internalID: -7465814216780502915
       vertices: []
       indices: 
       edges: []
@@ -288,7 +378,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc7a1e47e5060d748910c153dca289d6
+    spriteID: a6fbf6479f235cf4ea0d7b739dde95af
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +388,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ODA_0: -4186077727224977546
-      ODA_1: 4153566873615887526
-      ODA_2: 7431635809620722379
-      ODA_3: -6880832549167129232
-      ODA_4: -6376494099571010878
-      ODA_5: -2686501812362426360
-      ODA_6: 4792896737208779842
+      asansor_0: 4569151267882470824
+      asansor_1: -1033496068003384883
+      asansor_10: 9008328201693296977
+      asansor_11: 4191485427904900790
+      asansor_12: -4198763594738595639
+      asansor_13: 7546393951133455317
+      asansor_14: -6006714688141860293
+      asansor_15: 2503817809440825388
+      asansor_16: -7465814216780502915
+      asansor_17: 765020721222550698
+      asansor_2: -6388186570496086113
+      asansor_3: 1932507767864564610
+      asansor_4: 8347815743664983569
+      asansor_5: -1122519283450034687
+      asansor_6: -4721704977789986282
+      asansor_7: 4237631877916242039
+      asansor_8: -7697260296844788912
+      asansor_9: 1541424210914872381
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

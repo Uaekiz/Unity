@@ -83,82 +83,65 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator CombatRoutine()
     {
-        yield return new WaitForSeconds(baslamaGecikmesi); 
-        
+        yield return new WaitForSeconds(baslamaGecikmesi);
+
+        // Karakteri ilk kez saldırı pozisyonuna sok
         animator.SetTrigger("Saldiri");
-        if (!siperKullanirMi) isAcikta = true; 
+        if (!siperKullanirMi) isAcikta = true;
 
-        yield return new WaitForSeconds(1.5f); 
+        yield return new WaitForSeconds(1f);
 
-        // SAVAŞ DÖNGÜSÜ
         while (!isDead)
         {
-            // 1. LİSTEDEN ŞU ANKİ ÖRÜNTÜYÜ AL
-            if (saldiriDuzenleri.Count == 0)
-            {
-                Debug.LogError("Lütfen Inspector'dan Saldırı Düzenleri listesini doldur!");
-                yield break;
-            }
-
             SaldiriDeseni mevcutDuzen = saldiriDuzenleri[suankiDuzenIndex];
-
-            // 2. VURUŞ LİSTESİNİ HAZIRLA (Matematiksel Hesap)
-            // Örn: 3 mermi, 1 isabet ise -> [True, False, False] (Karışık sıralı)
             List<bool> mermiSonuclari = new List<bool>();
-            
             for (int i = 0; i < mevcutDuzen.toplamMermi; i++)
-            {
-                if (i < mevcutDuzen.isabetSayisi)
-                    mermiSonuclari.Add(true); // Vuracak
-                else
-                    mermiSonuclari.Add(false); // Iskalaması lazım
-            }
-            
-            // Listeyi karıştır ki hep ilk mermiler vurmasın (Doğallık için)
+                mermiSonuclari.Add(i < mevcutDuzen.isabetSayisi);
             Karistir(mermiSonuclari);
-
 
             // --- SİPERDEN ÇIKMA ---
             if (siperKullanirMi)
             {
                 animator.SetTrigger("Cikis");
-                yield return new WaitForSeconds(0.2f); 
-                isAcikta = true; 
-                yield return new WaitForSeconds(siperdenCikisSuresi - 0.2f); 
+                yield return new WaitForSeconds(siperdenCikisSuresi);
+                isAcikta = true;
             }
 
-            // --- ATEŞ ETME (Belirlenen Düzene Göre) ---
+            // --- ATEŞ ETME ---
             for (int i = 0; i < mevcutDuzen.toplamMermi; i++)
             {
                 if (isDead) break;
-                
-                // Merminin akıbetini (Vuracak mı, Iskalayacak mı) gönderiyoruz
                 FireShot(mermiSonuclari[i]);
-                
+                // Her atıştan sonra animator otomatik olarak Ates_Bekleme'ye düşecek
                 yield return new WaitForSeconds(atisHizi);
             }
 
-            // --- SİPERE GİRME ---
+            // --- SAVAŞ SONRASI BEKLEME ---
             if (siperKullanirMi && !isDead)
             {
-                isAcikta = false; 
-                animator.SetTrigger("Giris"); 
-                yield return new WaitForSeconds(sipereGirisSuresi); 
+                isAcikta = false;
+                animator.SetTrigger("Giris");
+                yield return new WaitForSeconds(sipereGirisSuresi);
+            }
+            else
+            {
+                // Siper kullanmıyorsa, ateş bittiğinde karakter Ates_Bekleme'de 
+                // heykel gibi silahı doğrultmuş şekilde bekleyecek.
             }
 
-            // --- SIRADAKİ ÖRÜNTÜYE GEÇ ---
-            // Listenin sonuna geldiysek başa dön (Modülo işlemi)
             suankiDuzenIndex = (suankiDuzenIndex + 1) % saldiriDuzenleri.Count;
 
             if (!isDead) yield return new WaitForSeconds(beklemeSuresi);
+
+            // Bekleme süresi bittiğinde döngü başa döner ve tekrar ateş başlar.
         }
     }
 
     void FireShot(bool isabetEtsinMi)
     {
+        // Ates_Bekleme'den çıkıp ateş animasyonuna girmesi için trigger'ı ateşliyoruz
         animator.SetTrigger("Ates");
 
-        // Görsel efekt için yön hesabı (Sadece kırmızı çizgi çıksın diye)
         if (firePoint != null && player != null)
         {
             Vector2 directionToPlayer = (player.position - firePoint.position).normalized;
@@ -166,29 +149,15 @@ public class EnemyAI : MonoBehaviour
 
             if (isabetEtsinMi)
             {
-                // --- İSABET DURUMU ---
                 finalDirection = directionToPlayer;
-                Debug.DrawRay(firePoint.position, finalDirection * 50f, Color.red, 0.1f);
-
-                // FİZİK YOK, DİREKT HASAR VAR!
-                // Eğer oyuncunun can scriptini bulduysak, direkt canını yak.
-                if (playerStats != null)
-                {
-                    playerStats.TakeDamage(oyuncuyaHasar);
-                }
+                if (playerStats != null) playerStats.TakeDamage(oyuncuyaHasar);
             }
             else
             {
-                // --- ISKA DURUMU ---
-                // Mermiyi bilerek yamuk atıyoruz, oyuncuya değmiyor.
                 float zorunluSapma = Random.Range(0, 2) == 0 ? 15f : -15f;
                 finalDirection = Quaternion.Euler(0, 0, zorunluSapma) * directionToPlayer;
-                
-                // Sarı çizgi (Iska)
-                Debug.DrawRay(firePoint.position, finalDirection * 50f, Color.yellow, 0.1f);
-                
-                // Burada hasar verme kodu YOK. Sadece görsel çizgi var.
             }
+            Debug.DrawRay(firePoint.position, finalDirection * 50f, isabetEtsinMi ? Color.red : Color.yellow, 0.1f);
         }
     }
 
