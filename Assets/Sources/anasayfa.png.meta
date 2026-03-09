@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: 09c378c871a39614e8829f543a4193a6
+guid: d3fdb1c4632ebfc4e8c853742fcdabfa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4186077727224977546
-    second: ODA_0
+      213: 2697682931574932966
+    second: anasayfa_0
   - first:
-      213: 4153566873615887526
-    second: ODA_1
+      213: -8781230554735426984
+    second: anasayfa_1
   - first:
-      213: 7431635809620722379
-    second: ODA_2
+      213: -8167787933553252409
+    second: anasayfa_2
   - first:
-      213: -6880832549167129232
-    second: ODA_3
+      213: 1670516003693326447
+    second: anasayfa_3
   - first:
-      213: -6376494099571010878
-    second: ODA_4
+      213: -4665578746286399367
+    second: anasayfa_4
   - first:
-      213: -2686501812362426360
-    second: ODA_5
+      213: -307636496940150783
+    second: anasayfa_5
   - first:
-      213: 4792896737208779842
-    second: ODA_6
+      213: 8577498982170535482
+    second: anasayfa_6
+  - first:
+      213: 4329157291065248365
+    second: anasayfa_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -131,35 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ODA_0
-      rect:
-        serializedVersion: 2
-        x: 734
-        y: 626
-        width: 38
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 677a4926c7018e5c0800000000000000
-      internalID: -4186077727224977546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_1
+      name: anasayfa_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 335
-        width: 1024
-        height: 536
+        y: 1311
+        width: 512
+        height: 266
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,64 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ac64b4a01f64a930800000000000000
-      internalID: 4153566873615887526
+      spriteID: 6e588255558107520800000000000000
+      internalID: 2697682931574932966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_2
+      name: anasayfa_1
       rect:
         serializedVersion: 2
-        x: 85
-        y: 71
-        width: 126
-        height: 250
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bc20484f469722760800000000000000
-      internalID: 7431635809620722379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_3
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 131
-        width: 35
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 1, w: 1}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07d92f3b04f5280a0800000000000000
-      internalID: -6880832549167129232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_4
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 131
-        width: 160
-        height: 132
+        x: 533
+        y: 1311
+        width: 512
+        height: 266
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c212ba86642287a0800000000000000
-      internalID: -6376494099571010878
+      spriteID: 852403ed55dc22680800000000000000
+      internalID: -8781230554735426984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_5
+      name: anasayfa_2
       rect:
         serializedVersion: 2
-        x: 547
-        y: 105
-        width: 94
-        height: 150
+        x: 1066
+        y: 1311
+        width: 512
+        height: 266
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 808c1b9d5d0a7bad0800000000000000
-      internalID: -2686501812362426360
+      spriteID: 7c726d3362036ae80800000000000000
+      internalID: -8167787933553252409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_6
+      name: anasayfa_3
       rect:
         serializedVersion: 2
-        x: 699
-        y: 76
-        width: 273
-        height: 211
+        x: 0
+        y: 778
+        width: 512
+        height: 266
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +215,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 244457a403ac38240800000000000000
-      internalID: 4792896737208779842
+      spriteID: f60febf547dde2710800000000000000
+      internalID: 1670516003693326447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anasayfa_4
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 778
+        width: 512
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970acfb79d8804fb0800000000000000
+      internalID: -4665578746286399367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anasayfa_5
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 778
+        width: 512
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100dfe76c3e0bbbf0800000000000000
+      internalID: -307636496940150783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anasayfa_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 245
+        width: 512
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a36ac85f0e5690770800000000000000
+      internalID: 8577498982170535482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anasayfa_7
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 245
+        width: 512
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a8cbe8e91441c30800000000000000
+      internalID: 4329157291065248365
       vertices: []
       indices: 
       edges: []
@@ -288,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc7a1e47e5060d748910c153dca289d6
+    spriteID: f80b27df680d0d44abb58bae64173a29
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +323,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ODA_0: -4186077727224977546
-      ODA_1: 4153566873615887526
-      ODA_2: 7431635809620722379
-      ODA_3: -6880832549167129232
-      ODA_4: -6376494099571010878
-      ODA_5: -2686501812362426360
-      ODA_6: 4792896737208779842
+      anasayfa_0: 2697682931574932966
+      anasayfa_1: -8781230554735426984
+      anasayfa_2: -8167787933553252409
+      anasayfa_3: 1670516003693326447
+      anasayfa_4: -4665578746286399367
+      anasayfa_5: -307636496940150783
+      anasayfa_6: 8577498982170535482
+      anasayfa_7: 4329157291065248365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

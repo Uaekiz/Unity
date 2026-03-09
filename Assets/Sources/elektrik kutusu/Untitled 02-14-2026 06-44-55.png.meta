@@ -50,6 +50,12 @@ TextureImporter:
   - first:
       213: -6152847476200237124
     second: Untitled 02-14-2026 06-44-55_15
+  - first:
+      213: 4343586698998993995
+    second: Untitled 02-14-2026 06-44-55_16
+  - first:
+      213: 7339715108912728323
+    second: Untitled 02-14-2026 06-44-55_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -154,6 +160,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -161,10 +180,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_0
       rect:
         serializedVersion: 2
-        x: 76
-        y: 766
-        width: 180
-        height: 220
+        x: 66
+        y: 342
+        width: 59
+        height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +202,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_1
       rect:
         serializedVersion: 2
-        x: 422
-        y: 766
-        width: 180
-        height: 220
+        x: 249
+        y: 444
+        width: 39
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +224,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_2
       rect:
         serializedVersion: 2
-        x: 747
-        y: 763
-        width: 180
-        height: 220
+        x: 444
+        y: 425
+        width: 19
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +246,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_3
       rect:
         serializedVersion: 2
-        x: 73
-        y: 409
-        width: 180
-        height: 220
+        x: 36
+        y: 166
+        width: 87
+        height: 149
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +268,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_4
       rect:
         serializedVersion: 2
-        x: 425
-        y: 411
-        width: 180
-        height: 220
+        x: 212
+        y: 166
+        width: 87
+        height: 150
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +290,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_5
       rect:
         serializedVersion: 2
-        x: 705
-        y: 579
-        width: 14
-        height: 14
+        x: 379
+        y: 166
+        width: 90
+        height: 150
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +312,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_6
       rect:
         serializedVersion: 2
-        x: 727
-        y: 519
-        width: 64
-        height: 70
+        x: 39
+        y: 88
+        width: 102
+        height: 67
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +334,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_7
       rect:
         serializedVersion: 2
-        x: 705
-        y: 547
-        width: 14
-        height: 14
+        x: 151
+        y: 87
+        width: 102
+        height: 67
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,10 +356,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_8
       rect:
         serializedVersion: 2
-        x: 801
-        y: 519
-        width: 20
-        height: 56
+        x: 267
+        y: 41
+        width: 101
+        height: 101
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,10 +378,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_9
       rect:
         serializedVersion: 2
-        x: 853
-        y: 519
-        width: 30
-        height: 38
+        x: 403
+        y: 41
+        width: 101
+        height: 101
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,10 +400,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_10
       rect:
         serializedVersion: 2
-        x: 885
-        y: 503
-        width: 70
-        height: 70
+        x: 56
+        y: 61
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +422,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_11
       rect:
         serializedVersion: 2
-        x: 705
-        y: 521
-        width: 14
-        height: 14
+        x: 56
+        y: 45
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,10 +444,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_12
       rect:
         serializedVersion: 2
-        x: 705
-        y: 495
-        width: 14
-        height: 14
+        x: 77
+        y: 23
+        width: 27
+        height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,10 +466,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_13
       rect:
         serializedVersion: 2
-        x: 79
-        y: 203
-        width: 202
-        height: 132
+        x: 141
+        y: 22
+        width: 9
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,10 +488,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_14
       rect:
         serializedVersion: 2
-        x: 425
-        y: 201
-        width: 202
-        height: 132
+        x: 190
+        y: 26
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,10 +510,10 @@ TextureImporter:
       name: Untitled 02-14-2026 06-44-55_15
       rect:
         serializedVersion: 2
-        x: 745
-        y: 257
-        width: 40
-        height: 60
+        x: 56
+        y: 32
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,11 +528,253 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_16
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 26
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4452f4e615874c30800000000000000
+      internalID: 4343586698998993995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_17
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 19
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3098f4b0108ebd560800000000000000
+      internalID: 7339715108912728323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_18
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 419
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fd6729c1c0f0740ac6faa328ccb9be
+      internalID: 1926640907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_19
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 426
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c419c807de8eb84db7b70081c6f9a04
+      internalID: 714047927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_20
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 472
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d830ad4b867ba647abe82b1515f2749
+      internalID: -60947292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_21
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 472
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dcdc3f01b611e949a4676e875175e33
+      internalID: 2017721314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_22
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 472
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65972dc17bddbf6458e9d7bd21d53d90
+      internalID: -51152510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_23
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 267
+        width: 9
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751e578214858684b8e8aa72e81af1a3
+      internalID: -1742096869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_24
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 243
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd56c3be34bb3ad46b71c9208a0f4aa0
+      internalID: 781644217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_25
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 443
+        width: 9
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35605f2a56a32f46840aac5814ef33f
+      internalID: 1609141539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled 02-14-2026 06-44-55_26
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 91
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d86bd6e1f549124ca3fb8b2f0a50e12
+      internalID: -187251937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e63e25a12d2effd4cb1bc67105882fc3
+    spriteID: 67c980d5916a64e4fb984c75ca446d5d
     internalID: 0
     vertices: []
     indices: 
@@ -531,7 +792,18 @@ TextureImporter:
       Untitled 02-14-2026 06-44-55_13: 8564167311176726416
       Untitled 02-14-2026 06-44-55_14: 2967404733043378509
       Untitled 02-14-2026 06-44-55_15: -6152847476200237124
+      Untitled 02-14-2026 06-44-55_16: 4343586698998993995
+      Untitled 02-14-2026 06-44-55_17: 7339715108912728323
+      Untitled 02-14-2026 06-44-55_18: 1926640907
+      Untitled 02-14-2026 06-44-55_19: 714047927
       Untitled 02-14-2026 06-44-55_2: 8787750851402300873
+      Untitled 02-14-2026 06-44-55_20: -60947292
+      Untitled 02-14-2026 06-44-55_21: 2017721314
+      Untitled 02-14-2026 06-44-55_22: -51152510
+      Untitled 02-14-2026 06-44-55_23: -1742096869
+      Untitled 02-14-2026 06-44-55_24: 781644217
+      Untitled 02-14-2026 06-44-55_25: 1609141539
+      Untitled 02-14-2026 06-44-55_26: -187251937
       Untitled 02-14-2026 06-44-55_3: -7407442375646391814
       Untitled 02-14-2026 06-44-55_4: -5413670565146841847
       Untitled 02-14-2026 06-44-55_5: 7823365451709177680

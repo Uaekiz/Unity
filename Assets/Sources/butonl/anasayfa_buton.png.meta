@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: 09c378c871a39614e8829f543a4193a6
+guid: cadb0d2356a4fda4395730a8471e3e72
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4186077727224977546
-    second: ODA_0
+      213: 3404123574361161225
+    second: anasayfa_buton_0
   - first:
-      213: 4153566873615887526
-    second: ODA_1
+      213: 6396292599152164207
+    second: anasayfa_buton_1
   - first:
-      213: 7431635809620722379
-    second: ODA_2
+      213: 7310424298360914128
+    second: anasayfa_buton_2
   - first:
-      213: -6880832549167129232
-    second: ODA_3
+      213: 8899808002350809718
+    second: anasayfa_buton_3
   - first:
-      213: -6376494099571010878
-    second: ODA_4
+      213: 1916002387963632201
+    second: anasayfa_buton_4
   - first:
-      213: -2686501812362426360
-    second: ODA_5
+      213: -6470824604027410262
+    second: anasayfa_buton_5
   - first:
-      213: 4792896737208779842
-    second: ODA_6
+      213: -4754767541346137086
+    second: anasayfa_buton_6
+  - first:
+      213: 6447590728116244199
+    second: anasayfa_buton_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -131,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ODA_0
+      name: anasayfa_buton_0
       rect:
         serializedVersion: 2
-        x: 734
-        y: 626
-        width: 38
-        height: 58
+        x: 87
+        y: 655
+        width: 260
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,43 +149,153 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 677a4926c7018e5c0800000000000000
-      internalID: -4186077727224977546
+      spriteID: 90e7455ea50ed3f20800000000000000
+      internalID: 3404123574361161225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ODA_1
+      name: anasayfa_buton_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 647
+        y: 653
+        width: 260
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6dbcebda3234c850800000000000000
+      internalID: 6396292599152164207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anasayfa_buton_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 535
+        width: 260
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d0cf25ca28d37560800000000000000
+      internalID: 7310424298360914128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anasayfa_buton_3
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 533
+        width: 260
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6728c459938728b70800000000000000
+      internalID: 8899808002350809718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anasayfa_buton_4
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 437
+        width: 260
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a5f5b3502079a10800000000000000
+      internalID: 1916002387963632201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anasayfa_buton_5
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 435
+        width: 260
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8a6197e430336a0800000000000000
+      internalID: -6470824604027410262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anasayfa_buton_6
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 337
+        width: 260
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c818cec1ca30eb0800000000000000
+      internalID: -4754767541346137086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anasayfa_buton_7
+      rect:
+        serializedVersion: 2
+        x: 647
         y: 335
-        width: 1024
-        height: 536
+        width: 260
+        height: 56
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ac64b4a01f64a930800000000000000
-      internalID: 4153566873615887526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_2
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 71
-        width: 126
-        height: 250
-      alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -190,96 +303,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc20484f469722760800000000000000
-      internalID: 7431635809620722379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_3
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 131
-        width: 35
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 1, w: 1}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07d92f3b04f5280a0800000000000000
-      internalID: -6880832549167129232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_4
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 131
-        width: 160
-        height: 132
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c212ba86642287a0800000000000000
-      internalID: -6376494099571010878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_5
-      rect:
-        serializedVersion: 2
-        x: 547
-        y: 105
-        width: 94
-        height: 150
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 808c1b9d5d0a7bad0800000000000000
-      internalID: -2686501812362426360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ODA_6
-      rect:
-        serializedVersion: 2
-        x: 699
-        y: 76
-        width: 273
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 244457a403ac38240800000000000000
-      internalID: 4792896737208779842
+      spriteID: 7ee887e3b917a7950800000000000000
+      internalID: 6447590728116244199
       vertices: []
       indices: 
       edges: []
@@ -288,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc7a1e47e5060d748910c153dca289d6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +323,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ODA_0: -4186077727224977546
-      ODA_1: 4153566873615887526
-      ODA_2: 7431635809620722379
-      ODA_3: -6880832549167129232
-      ODA_4: -6376494099571010878
-      ODA_5: -2686501812362426360
-      ODA_6: 4792896737208779842
+      anasayfa_buton_0: 3404123574361161225
+      anasayfa_buton_1: 6396292599152164207
+      anasayfa_buton_2: 7310424298360914128
+      anasayfa_buton_3: 8899808002350809718
+      anasayfa_buton_4: 1916002387963632201
+      anasayfa_buton_5: -6470824604027410262
+      anasayfa_buton_6: -4754767541346137086
+      anasayfa_buton_7: 6447590728116244199
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
