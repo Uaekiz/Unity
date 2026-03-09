@@ -5101,7 +5101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aff876430875464a96d61a4325a3be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AsansorKontrol
-  asansorSprite: {fileID: 0}
+  asansorSprite: {fileID: 1563514123}
   bozukGorsel: {fileID: 5604639316501108491, guid: bf68256c0e85820488bdf1ea82b4fe20, type: 3}
   calisirGorsel: {fileID: 4569151267882470824, guid: 53e6303e9fb76ff4db68dd9ea37ab41c, type: 3}
   asansorAnimator: {fileID: 1563514127}

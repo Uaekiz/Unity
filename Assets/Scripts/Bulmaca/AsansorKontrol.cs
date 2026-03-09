@@ -23,9 +23,9 @@ public class AsansorKontrol : MonoBehaviour
     {
         // 3 ana parçanýn da tamir edilip edilmediðini GlobalData'dan soruyoruz
         // SlotID'lerin neyse onlarý buraya birebir yazmalýsýn (Örn: "Sigorta_Slot")
-        bool sigortaTamam = GlobalData.DurumNedir("T_Sigorta_Slot");
-        bool kondaktorTamam = GlobalData.DurumNedir("T_Kondaktor_Slot");
-        bool kabloTamam = GlobalData.DurumNedir("T_Kablo_Slot");
+        bool sigortaTamam = GlobalData.DurumNedir("T_K_Sigorta_Slot");
+        bool kondaktorTamam = GlobalData.DurumNedir("T_K_Kondaktor_Slot");
+        bool kabloTamam = GlobalData.DurumNedir("T_K_Kablo_Slot");
 
         if (sigortaTamam && kondaktorTamam && kabloTamam)
         {
