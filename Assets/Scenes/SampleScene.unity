@@ -2793,6 +2793,8 @@ MonoBehaviour:
     esyaGorseli: {fileID: 8564167311176726416, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   - esyaID: Kondaktor
     esyaGorseli: {fileID: 2967404733043378509, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
+  asansorPaneli: {fileID: 619089991}
+  asansorCanvasGroup: {fileID: 619089996}
 --- !u!114 &763994644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5125,13 +5127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AsansorKontrol
   asansorSprite: {fileID: 1563514123}
-  bozukGorsel: {fileID: 5604639316501108491, guid: bf68256c0e85820488bdf1ea82b4fe20, type: 3}
   calisirGorsel: {fileID: 4569151267882470824, guid: 53e6303e9fb76ff4db68dd9ea37ab41c, type: 3}
   asansorAnimator: {fileID: 1563514127}
   acilmaTriggerIsmi: acilma
-  asansorPaneli: {fileID: 619089991}
-  panelCanvasGroup: {fileID: 619089996}
-  panelCikisButonu: {fileID: 1424131067}
   kontrolIDleri:
   - T_K_Sigorta_Slot
   - T_K_Kondaktor_Slot

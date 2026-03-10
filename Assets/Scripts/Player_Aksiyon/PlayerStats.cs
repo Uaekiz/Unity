@@ -1,23 +1,24 @@
 using UnityEngine;
-using UnityEngine.UI; // İleride Can barı eklersen lazım olur
+using UnityEngine.UI; // UI bileşenlerine erişmek için şart
 
 public class PlayerStats : MonoBehaviour
 {
     [Header("Genel Ayarlar")]
-    public float maxHealth = 100f;   // Maksimum Can
-    public float currentHealth;      // Şu anki Can
+    public float maxHealth = 100f;
+    public float currentHealth;
+
+    [Header("UI Ayarları")]
+    public Image damageOverlay; // Hazırladığımız Image'ı buraya sürükleyeceğiz
 
     [Header("Durum")]
     public bool isDead = false;
 
     void Start()
     {
-        // Oyun başlarken canı fulle
         currentHealth = maxHealth;
+        UpdateDamageVisual(); // Başlangıçta ekranı temizle
     }
 
-    // --- HASAR ALMA FONKSİYONU ---
-    // Bu fonksiyonu Düşmanlar çağıracak
     public void TakeDamage(float damage)
     {
         if (isDead) return;
@@ -25,7 +26,7 @@ public class PlayerStats : MonoBehaviour
         currentHealth -= damage;
         Debug.Log("Oyuncu Vuruldu! Kalan Can: " + currentHealth);
 
-        // İleride buraya ekranı kızartma veya can barı düşürme kodu ekleyeceğiz.
+        UpdateDamageVisual(); // Her hasar aldığında görseli güncelle
 
         if (currentHealth <= 0)
         {
@@ -33,21 +34,41 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    // --- İYİLEŞME FONKSİYONU ---
-    // Belki ileride can kiti alırsa
     public void Heal(float amount)
     {
         currentHealth += amount;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
+
+        UpdateDamageVisual(); // Can dolunca da ekranı temizle
+    }
+
+    // --- EKRAN KARARTMA FONKSİYONU ---
+    void UpdateDamageVisual()
+    {
+        if (damageOverlay != null)
+        {
+            // Can yüzdesini hesapla (0 ile 1 arası)
+            // 100 canda -> 1.0 | 0 canda -> 0.0
+            float healthPercentage = currentHealth / maxHealth;
+
+            // Opaklık (Alpha) canın tersi olmalı. 
+            // Can 1 iken Alpha 0 (görünmez), Can 0 iken Alpha 1 (tam görünür)
+            float alpha = 1 - healthPercentage;
+
+            // Image'ın rengini koru ama Alpha değerini güncelle
+            Color tempColor = damageOverlay.color;
+            tempColor.a = alpha;
+            damageOverlay.color = tempColor;
+        }
     }
 
     void Die()
     {
         isDead = true;
         Debug.Log("OYUNCU ÖLDÜ! GAME OVER.");
-        
-        #if UNITY_EDITOR
+
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #endif
+#endif
     }
 }

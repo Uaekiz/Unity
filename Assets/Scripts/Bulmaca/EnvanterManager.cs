@@ -24,6 +24,10 @@ public class EnvanterManager : MonoBehaviour
     [Header("Eşya Veritabanı")]
     public List<EsyaResmi> esyaKutuphanesi;
 
+    [Header("Asansör Özel Ayarları")]
+    public GameObject asansorPaneli; 
+    public CanvasGroup asansorCanvasGroup;
+
     private void Awake()
     {
         if (Instance == null)
