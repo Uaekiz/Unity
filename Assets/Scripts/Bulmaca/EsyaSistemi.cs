@@ -16,6 +16,8 @@ public class EsyaSistemi : MonoBehaviour
     {
         public string esyaID;
         public int miktar;
+        [Tooltip("Eğer bu eşya bir bulmacada kullanıldıysa oranın ID'sini yazın (Örn: T_K_Bant_Slot). Yoksa boş bırakın.")]
+        public string kullanildigiYerID;
     }
     public List<EsyaBilgisi> esyaListesi;
 
@@ -72,6 +74,11 @@ public class EsyaSistemi : MonoBehaviour
 
     public void EtkilesimeGir()
     {
+        if (GameManager.Instance != null && !GameManager.oda1Temizlendi)
+        {
+            Debug.Log("Savaş bitmeden eşyalarla etkileşime giremezsin!");
+            return; // Fonksiyonu burada iptal et, aşağıdaki eşya alma kodlarına inmesin!
+        }
         // 1. BULMACA MANTIĞI 
         if (buBirBulmacaMi)
         {
@@ -125,7 +132,16 @@ public class EsyaSistemi : MonoBehaviour
         if (esyaListesi.Count == 0) return true;
         foreach (var esya in esyaListesi)
         {
-            if (!GlobalData.DurumNedir(esya.esyaID)) return false;
+            bool cebimizdeMi = GlobalData.DurumNedir(esya.esyaID);
+            
+            bool kullanildiMi = false;
+            if (!string.IsNullOrEmpty(esya.kullanildigiYerID))
+            {
+                kullanildiMi = GlobalData.DurumNedir(esya.kullanildigiYerID);
+            }
+
+            if (!cebimizdeMi && !kullanildiMi) 
+                return false;
         }
         return true;
     }

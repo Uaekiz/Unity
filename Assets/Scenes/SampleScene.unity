@@ -1787,6 +1787,7 @@ MonoBehaviour:
   esyaListesi:
   - esyaID: Kontrol Kalemi
     miktar: 1
+    kullanildigiYerID: 
   kapaliResim: {fileID: 4493663737094323846, guid: d35e389ccf129f040be90c3ee2a6fa30, type: 3}
   acikBosResim: {fileID: 7559788896691549141, guid: d35e389ccf129f040be90c3ee2a6fa30, type: 3}
   acikDoluResim: {fileID: -2790604944950653602, guid: d35e389ccf129f040be90c3ee2a6fa30, type: 3}
@@ -2158,8 +2159,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1655096762}
-  - {fileID: 1424131068}
   - {fileID: 972203438}
+  - {fileID: 1424131068}
   m_Father: {fileID: 1812286327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3026,7 +3027,7 @@ Transform:
   m_GameObject: {fileID: 872886072}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26, y: -3.96, z: 0}
+  m_LocalPosition: {x: 20.43, y: -3.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4107,7 +4108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487067fcc76a6cb4893823035c99ec19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaEnvanterSistemi
-  bulmacaSlotlari: []
+  bulmacaSlotlari:
+  - esyaID: Kontrol Kalemi
+    slotUI: {fileID: 438598643}
 --- !u!1 &1320084439
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,7 +5130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AsansorKontrol
   asansorSprite: {fileID: 1563514123}
-  calisirGorsel: {fileID: 4569151267882470824, guid: 53e6303e9fb76ff4db68dd9ea37ab41c, type: 3}
+  calisirGorsel: {fileID: -7465814216780502915, guid: 53e6303e9fb76ff4db68dd9ea37ab41c, type: 3}
   asansorAnimator: {fileID: 1563514127}
   acilmaTriggerIsmi: acilma
   kontrolIDleri:

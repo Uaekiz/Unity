@@ -1234,6 +1234,7 @@ MonoBehaviour:
   esyaListesi:
   - esyaID: Bant
     miktar: 1
+    kullanildigiYerID: T_K_Kablo_Slot
   kapaliResim: {fileID: 4792896737208779842, guid: 09c378c871a39614e8829f543a4193a6, type: 3}
   acikBosResim: {fileID: 5769318558331649686, guid: d35e389ccf129f040be90c3ee2a6fa30, type: 3}
   acikDoluResim: {fileID: 1583899254217745117, guid: d35e389ccf129f040be90c3ee2a6fa30, type: 3}

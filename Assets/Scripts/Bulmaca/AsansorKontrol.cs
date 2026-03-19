@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AsansorKontrol : MonoBehaviour
 {
-    [Header("Görsel Ayarlar")]
+    [Header("Gï¿½rsel Ayarlar")]
     public SpriteRenderer asansorSprite;
     public Sprite calisirGorsel;
 
@@ -15,6 +15,39 @@ public class AsansorKontrol : MonoBehaviour
     public string[] kontrolIDleri = { "T_K_Sigorta_Slot", "T_K_Kondaktor_Slot", "T_K_Kablo_Slot" };
 
     private bool asansorCalisiyor = false;
+
+    void Start()
+    {
+        // SAHNE YÃœKLENDÄ°ÄžÄ°NDE KONTROL ET: AsansÃ¶r daha Ã¶nce tamir edilmiÅŸ mi?
+        bool oncedenTamirEdilmisMi = true;
+        foreach (string id in kontrolIDleri)
+        {
+            if (!GlobalData.DurumNedir(id))
+            {
+                oncedenTamirEdilmisMi = false;
+                break;
+            }
+        }
+
+        // EÄŸer tÃ¼m parÃ§alar Ã¶nceden takÄ±lmÄ±ÅŸsa (tamir edildiyse)
+        // EÄŸer tÃ¼m parÃ§alar Ã¶nceden takÄ±lmÄ±ÅŸsa (tamir edildiyse)
+        if (oncedenTamirEdilmisMi)
+        {
+            asansorCalisiyor = true; // Tekrar tamir sekansÄ±nÄ±n Ã§alÄ±ÅŸmasÄ±nÄ± engelle
+
+            // 1. Animator'Ä± tamamen uyut. BÃ¶ylece animasyonu baÅŸtan oynatmaya Ã§alÄ±ÅŸmaz.
+            if (asansorAnimator != null)
+            {
+                asansorAnimator.enabled = false; 
+            }
+
+            // 2. Direkt olarak Ã§alÄ±ÅŸan (Ä±ÅŸÄ±klÄ±/aÃ§Ä±k) gÃ¶rseli koy ve Ã¶ylece kalsÄ±n
+            if (asansorSprite != null && calisirGorsel != null)
+            {
+                asansorSprite.sprite = calisirGorsel;
+            }
+        }
+    }
 
     public void Denetle()
     {
@@ -44,21 +77,21 @@ public class AsansorKontrol : MonoBehaviour
         {
             CanvasGroup cg = EnvanterManager.Instance.asansorCanvasGroup;
 
-            // 1. AÞAMA: ETKÝLEÞÝMÝ KES
-            // Oyuncu baþardýðýný anlasýn ama artýk týklayamasýn
+            // 1. Aï¿½AMA: ETKï¿½LEï¿½ï¿½Mï¿½ KES
+            // Oyuncu baï¿½ardï¿½ï¿½ï¿½nï¿½ anlasï¿½n ama artï¿½k tï¿½klayamasï¿½n
             if (cg != null)
             {
                 cg.interactable = false;
                 cg.blocksRaycasts = false;
             }
 
-            // --- 1.5 Saniye Bekle (Baþarý aný) ---
+            // --- 1.5 Saniye Bekle (Baï¿½arï¿½ anï¿½) ---
             yield return new WaitForSeconds(1.5f);
 
-            // 2. AÞAMADA: YAVAÞÇA KAPANMA (FADE OUT)
+            // 2. Aï¿½AMADA: YAVAï¿½ï¿½A KAPANMA (FADE OUT)
             if (cg != null)
             {
-                float fadeSure = 1.0f; // Kapanma hýzý (1 saniye)
+                float fadeSure = 1.0f; // Kapanma hï¿½zï¿½ (1 saniye)
                 float baslangicAlpha = cg.alpha;
 
                 for (float t = 0; t < fadeSure; t += Time.deltaTime)
@@ -71,19 +104,19 @@ public class AsansorKontrol : MonoBehaviour
 
             // Paneli tamamen kapat
             EnvanterManager.Instance.asansorPaneli.SetActive(false);
-            Debug.Log("Panel yavaþça kapandý.");
+            Debug.Log("Panel yavaï¿½ï¿½a kapandï¿½.");
         }
 
-        // --- PANEL KAPANDIKTAN SONRA 1.5 SANÝYE DAHA BEKLE ---
+        // --- PANEL KAPANDIKTAN SONRA 1.5 SANï¿½YE DAHA BEKLE ---
         yield return new WaitForSeconds(1.5f);
 
-        // 3. AÞAMADA: ASANSÖRÜ ÇALIÞTIR
+        // 3. Aï¿½AMADA: ASANSï¿½Rï¿½ ï¿½ALIï¿½TIR
         if (asansorSprite != null && calisirGorsel != null)
             asansorSprite.sprite = calisirGorsel;
 
         if (asansorAnimator != null)
             asansorAnimator.SetTrigger(acilmaTriggerIsmi);
 
-        Debug.Log("Asansör görkemli bir þekilde açýldý!");
+        Debug.Log("Asansï¿½r gï¿½rkemli bir ï¿½ekilde aï¿½ï¿½ldï¿½!");
     }
 }
