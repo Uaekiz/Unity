@@ -1,17 +1,34 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Sahne yönetimi için bu kütüphane þart!
+using UnityEngine.SceneManagement; // Sahne yï¿½netimi iï¿½in bu kï¿½tï¿½phane ï¿½art!
 
 public class MenuManager : MonoBehaviour
 {
+
+    void Start()
+    {
+        if (EnvanterManager.Instance != null)
+        {
+            Destroy(EnvanterManager.Instance.gameObject);
+        }
+    }
     public void PlayGame()
     {
+
+        GlobalData.sonCikisKapisi = "";
+        
+        if (GlobalData.oyunDurumlari != null)
+        {
+            GlobalData.oyunDurumlari.Clear();
+        }
+
+        GameManager.oda1Temizlendi = false;
        
         SceneManager.LoadScene("SampleScene");
     }
 
     public void QuitGame()
     {
-        Debug.Log("Oyundan çýkýldý.");
-        Application.Quit(); // Bu sadece gerçek oyunda (exe/apk) çalýþýr
+        Debug.Log("Oyundan ï¿½ï¿½kï¿½ldï¿½.");
+        Application.Quit(); // Bu sadece gerï¿½ek oyunda (exe/apk) ï¿½alï¿½ï¿½ï¿½r
     }
 }
