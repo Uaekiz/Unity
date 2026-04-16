@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
     public float kararmaSuresi = 2.5f;
     public float acilmaSuresi = 2.0f;
 
+    [Header("GameOver Ayarları")]
+    public GameObject gameOverPanel; // Hazırladın paneli buraya sürükleyeceğiz
+    public string anaMenuSahneAdi = "MainMenu"; // Ana menü sahnenin tam adı
+
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -56,11 +61,50 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Oda temiz değilse normal savaş başlasın
-            EnvanterManager.Instance.SavasModu(true);
-            if (oluCesetlerGrubu != null) oluCesetlerGrubu.SetActive(false); // Cesetler gizli
-            if (geriDonButonu != null) geriDonButonu.SetActive(false);       // Buton gizli
+            // Null kontrolü ekleyerek hatayı engelleyelim
+            if (EnvanterManager.Instance != null)
+            {
+                EnvanterManager.Instance.SavasModu(true);
+            }
+            else
+            {
+                Debug.LogWarning("EnvanterManager sahnede bulunamadı!");
+            }
+
+            if (oluCesetlerGrubu != null) oluCesetlerGrubu.SetActive(false);
+            if (geriDonButonu != null) geriDonButonu.SetActive(false);
         }
+    }
+
+    // --- ÖLÜM EKRANINI AÇAN FONKSİYON ---
+    public void GameOver()
+    {
+        Debug.Log("GameOver fonksiyonu tetiklendi!"); // Konsolda bunu görmelisin
+
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0f;
+            Debug.Log("Panel aktif edildi ve zaman durduruldu.");
+        }
+        else
+        {
+            Debug.LogError("DİKKAT: GameManager içindeki GameOverPanel slotu BOŞ!");
+        }
+    }
+
+    // --- TEKRAR DENE BUTONU İÇİN ---
+    public void TekrarDene()
+    {
+        Time.timeScale = 1f; // Zamanı tekrar akıt
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Aynı sahneyi yeniden yükle
+    }
+
+    // --- ANA SAYFA BUTONU İÇİN ---
+    public void AnaSayfayaDon()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("AnaSayfa");
     }
 
     public void DusmanOldu()

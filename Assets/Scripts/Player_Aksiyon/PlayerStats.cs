@@ -64,11 +64,15 @@ public class PlayerStats : MonoBehaviour
 
     void Die()
     {
+        if (isDead) return; // Zaten ölüyse bir daha tetikleme
+
         isDead = true;
         Debug.Log("OYUNCU ÖLDÜ! GAME OVER.");
 
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        // GameManager üzerinden ölümü ve paneli tetikle
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 }
