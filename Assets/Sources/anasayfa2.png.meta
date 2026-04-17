@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: d3fdb1c4632ebfc4e8c853742fcdabfa
+guid: a9ccf6952449bc9439dcb079aaa5c721
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2697682931574932966
-    second: anasayfa_0
+      213: -4027883637112456582
+    second: anasayfa2_0
   - first:
-      213: -8781230554735426984
-    second: anasayfa_1
+      213: 3734471205375533091
+    second: anasayfa2_1
   - first:
-      213: -8167787933553252409
-    second: anasayfa_2
+      213: -110047929629684876
+    second: anasayfa2_2
   - first:
-      213: 1670516003693326447
-    second: anasayfa_3
+      213: 89137897131692304
+    second: anasayfa2_3
   - first:
-      213: -4665578746286399367
-    second: anasayfa_4
+      213: 3607606553565031092
+    second: anasayfa2_4
   - first:
-      213: -307636496940150783
-    second: anasayfa_5
+      213: -6667112262985493607
+    second: anasayfa2_5
   - first:
-      213: 8577498982170535482
-    second: anasayfa_6
+      213: -4455139731772171502
+    second: anasayfa2_6
   - first:
-      213: 4329157291065248365
-    second: anasayfa_7
+      213: -7878007482483538371
+    second: anasayfa2_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -130,15 +130,41 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: anasayfa_0
+      name: anasayfa2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1311
+        y: 1299
         width: 512
         height: 266
       alignment: 0
@@ -149,18 +175,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e588255558107520800000000000000
-      internalID: 2697682931574932966
+      spriteID: a7abd453c251a18c0800000000000000
+      internalID: -4027883637112456582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anasayfa_1
+      name: anasayfa2_1
       rect:
         serializedVersion: 2
-        x: 533
-        y: 1311
+        x: 527
+        y: 1299
         width: 512
         height: 266
       alignment: 0
@@ -171,18 +197,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 852403ed55dc22680800000000000000
-      internalID: -8781230554735426984
+      spriteID: 320655476c183d330800000000000000
+      internalID: 3734471205375533091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anasayfa_2
+      name: anasayfa2_2
       rect:
         serializedVersion: 2
-        x: 1066
-        y: 1311
+        x: 1054
+        y: 1299
         width: 512
         height: 266
       alignment: 0
@@ -193,18 +219,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c726d3362036ae80800000000000000
-      internalID: -8167787933553252409
+      spriteID: 47bc726bdf7097ef0800000000000000
+      internalID: -110047929629684876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anasayfa_3
+      name: anasayfa2_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 778
+        y: 772
         width: 512
         height: 266
       alignment: 0
@@ -215,18 +241,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f60febf547dde2710800000000000000
-      internalID: 1670516003693326447
+      spriteID: 0115f86f17eac3100800000000000000
+      internalID: 89137897131692304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anasayfa_4
+      name: anasayfa2_4
       rect:
         serializedVersion: 2
-        x: 533
-        y: 778
+        x: 527
+        y: 772
         width: 512
         height: 266
       alignment: 0
@@ -237,18 +263,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 970acfb79d8804fb0800000000000000
-      internalID: -4665578746286399367
+      spriteID: 4ba6d9aeb0bc01230800000000000000
+      internalID: 3607606553565031092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anasayfa_5
+      name: anasayfa2_5
       rect:
         serializedVersion: 2
-        x: 1066
-        y: 778
+        x: 1054
+        y: 772
         width: 512
         height: 266
       alignment: 0
@@ -259,14 +285,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 100dfe76c3e0bbbf0800000000000000
-      internalID: -307636496940150783
+      spriteID: 993591f78b8a973a0800000000000000
+      internalID: -6667112262985493607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anasayfa_6
+      name: anasayfa2_6
       rect:
         serializedVersion: 2
         x: 0
@@ -281,17 +307,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a36ac85f0e5690770800000000000000
-      internalID: 8577498982170535482
+      spriteID: 21b9dfea40a2c22c0800000000000000
+      internalID: -4455139731772171502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anasayfa_7
+      name: anasayfa2_7
       rect:
         serializedVersion: 2
-        x: 533
+        x: 527
         y: 245
         width: 512
         height: 266
@@ -303,8 +329,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d6a8cbe8e91441c30800000000000000
-      internalID: 4329157291065248365
+      spriteID: d3603b42fe1bba290800000000000000
+      internalID: -7878007482483538371
       vertices: []
       indices: 
       edges: []
@@ -313,7 +339,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f80b27df680d0d44abb58bae64173a29
+    spriteID: 25d4636aa42d2c84eaa4aa2d708b2e32
     internalID: 0
     vertices: []
     indices: 
@@ -323,14 +349,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      anasayfa_0: 2697682931574932966
-      anasayfa_1: -8781230554735426984
-      anasayfa_2: -8167787933553252409
-      anasayfa_3: 1670516003693326447
-      anasayfa_4: -4665578746286399367
-      anasayfa_5: -307636496940150783
-      anasayfa_6: 8577498982170535482
-      anasayfa_7: 4329157291065248365
+      anasayfa2_0: -4027883637112456582
+      anasayfa2_1: 3734471205375533091
+      anasayfa2_2: -110047929629684876
+      anasayfa2_3: 89137897131692304
+      anasayfa2_4: 3607606553565031092
+      anasayfa2_5: -6667112262985493607
+      anasayfa2_6: -4455139731772171502
+      anasayfa2_7: -7878007482483538371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

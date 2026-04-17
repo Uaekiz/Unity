@@ -507,7 +507,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 84655782}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 47461448}
+        m_TargetAssemblyTypeName: KoridorManager, Assembly-CSharp
+        m_MethodName: AnaSayfayaDon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &84655782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2114394712287869782, guid: 7a20031cbdf92714cb689acb1ac5d040, type: 3}
+  m_Sprite: {fileID: -4202746654171696487, guid: 1eb363ee7bdb04744b70336d05058f4e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

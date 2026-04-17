@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KoridorManager : MonoBehaviour
 {
@@ -15,5 +16,11 @@ public class KoridorManager : MonoBehaviour
             oyuncu.transform.position = noktaOda1Onu.position;
             // İstersen burada oyuncunun yönünü de kapıya dönük yapabilirsin
         }
+    }
+
+    public void AnaSayfayaDon()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("AnaSayfa");
     }
 }
