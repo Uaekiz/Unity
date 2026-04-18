@@ -25,7 +25,7 @@ public class EnvanterManager : MonoBehaviour
     public List<EsyaResmi> esyaKutuphanesi;
 
     [Header("Asansör Özel Ayarları")]
-    public GameObject asansorPaneli; 
+    public GameObject asansorPaneli;
     public CanvasGroup asansorCanvasGroup;
 
     private void Awake()
@@ -92,5 +92,35 @@ public class EnvanterManager : MonoBehaviour
 
         // Savaşa girince eğer bir bulmaca paneli açıksa onu da kapatır
         if (savastaMi) TumBulmacaPanelleriniKapat();
+    }
+
+
+    [Header("Duraklatma Ayarlari")]
+    public GameObject duraklatmaPaneli; // Inspector'dan yeni paneli buraya sürükle
+
+    public void DuraklatmaPaneliniAc()
+    {
+        if (duraklatmaPaneli != null)
+        {
+            duraklatmaPaneli.SetActive(true);
+            // Arkadaki her şeyi durdurmak için zamanı donduruyoruz
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void DevamEt()
+    {
+        if (duraklatmaPaneli != null)
+        {
+            duraklatmaPaneli.SetActive(false);
+            // Zamanı normale döndürüyoruz
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void AnaSayfayaDon()
+    {
+        Time.timeScale = 1f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("AnaSayfa");
     }
 }

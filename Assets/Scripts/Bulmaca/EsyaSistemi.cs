@@ -43,11 +43,6 @@ public class EsyaSistemi : MonoBehaviour
             elButonu.gameObject.SetActive(false);
     }
 
-    void OnMouseDown()
-    {
-        if (!koridordaMi) EtkilesimeGir();
-    }
-
     // --- TETİKLEYİCİLER (Trigger) ---
     void OnTriggerEnter2D(Collider2D temas)
     {

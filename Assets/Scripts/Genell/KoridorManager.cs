@@ -18,9 +18,5 @@ public class KoridorManager : MonoBehaviour
         }
     }
 
-    public void AnaSayfayaDon()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("AnaSayfa");
-    }
+    
 }

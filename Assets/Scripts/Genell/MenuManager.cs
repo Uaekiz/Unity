@@ -31,4 +31,6 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Oyundan ��k�ld�.");
         Application.Quit(); // Bu sadece ger�ek oyunda (exe/apk) �al���r
     }
+
+    
 }
