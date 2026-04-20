@@ -21,7 +21,7 @@ public class MenuManager : MonoBehaviour
             GlobalData.oyunDurumlari.Clear();
         }
 
-        GameManager.oda1Temizlendi = false;
+        GameManager.oda1Temizlendi = SaveManager.Yukle();
        
         SceneManager.LoadScene("SampleScene");
     }

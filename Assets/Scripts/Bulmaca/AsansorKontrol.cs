@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement; // Sahne y�netimi i�in bu k�t�phane �art!
+using UnityEngine.UI;
 
 public class AsansorKontrol : MonoBehaviour
 {
@@ -14,10 +16,18 @@ public class AsansorKontrol : MonoBehaviour
     [Header("Kontrol ID'leri")]
     public string[] kontrolIDleri = { "T_K_Sigorta_Slot", "T_K_Kondaktor_Slot", "T_K_Kablo_Slot" };
 
+    [Header("Final Ayarlari")]
+    public CanvasGroup finalPanelCG;       
+    public GameObject etkilesimButonu;
+
     private bool asansorCalisiyor = false;
 
     void Start()
     {
+        if (etkilesimButonu != null)
+        {
+            _interactButtonComponent = etkilesimButonu.GetComponent<Button>();
+        }
         // SAHNE YÜKLENDİĞİNDE KONTROL ET: Asansör daha önce tamir edilmiş mi?
         bool oncedenTamirEdilmisMi = true;
         foreach (string id in kontrolIDleri)
@@ -118,5 +128,93 @@ public class AsansorKontrol : MonoBehaviour
             asansorAnimator.SetTrigger(acilmaTriggerIsmi);
 
         Debug.Log("Asans�r g�rkemli bir �ekilde a��ld�!");
+    }
+
+         
+    
+    // YENİ: Butonun tıklama (onClick) olayına erişmek için
+    private Button _interactButtonComponent;
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Eğer giren oyuncuysa VE asansör tamir edildiyse
+        if (collision.CompareTag("Player") && asansorCalisiyor)
+        {
+            // 1. BUTONU SAHİPLEN: Yetkiyi asansör alıyor
+            PlayerMove.aktifEtkilesimObjesi = this.gameObject;
+
+            if (_interactButtonComponent != null)
+            {
+                // 2. BAĞLANTILARI TEMİZLE: Varsa yakındaki kapının bağlantısını kopar
+                _interactButtonComponent.onClick.RemoveAllListeners();
+
+                // 3. KENDİ GÖREVİNİ EKLE: Butona basılınca TryToOpen çalışsın
+                _interactButtonComponent.onClick.AddListener(TryToOpen);
+
+                // 4. Butonu göster
+                etkilesimButonu.SetActive(true);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            // SADECE BUTONUN SAHİBİ ASANSÖR İSE GİZLE:
+            // (Eğer oyuncu asansörden çıkıp direkt kapıya girdiyse, butonu gizlememesi için)
+            if (PlayerMove.aktifEtkilesimObjesi == this.gameObject)
+            {
+                if (_interactButtonComponent != null)
+                {
+                    // Butonun görevini boşalt ve gizle
+                    _interactButtonComponent.onClick.RemoveAllListeners();
+                    etkilesimButonu.SetActive(false);
+                }
+
+                // Sahibi kalmadı diye belirt
+                PlayerMove.aktifEtkilesimObjesi = null;
+            }
+        }
+    }
+
+    public void TryToOpen()
+    {
+        if (asansorCalisiyor)
+        {
+            // Ekranda buton kalmasın
+            if (etkilesimButonu != null) 
+            {
+                _interactButtonComponent.onClick.RemoveAllListeners(); // Güvenlik için temizle
+                etkilesimButonu.SetActive(false);
+            }
+            
+            StartCoroutine(OyunFinalSekansi());
+        }
+    }
+
+    IEnumerator OyunFinalSekansi()
+    {
+        finalPanelCG.gameObject.SetActive(true);
+        finalPanelCG.blocksRaycasts = true;
+
+        float sayac = 0;
+        while (sayac < 1f)
+        {
+            sayac += Time.deltaTime;
+            finalPanelCG.alpha = sayac;
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(3f);
+
+        // Verileri sıfırla
+        GameManager.oda1Temizlendi = false; 
+        SaveManager.Kaydet(false);          
+        GlobalData.oyunDurumlari.Clear();   
+        GlobalData.sonCikisKapisi = "";
+
+        SceneManager.LoadScene("AnaSayfa");
     }
 }

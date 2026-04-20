@@ -167,10 +167,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("ARTIK İNCELEME MODUNDASIN!");
         if (geriDonButonu != null) geriDonButonu.SetActive(true);
 
+        GameManager.oda1Temizlendi = true;
+        SaveManager.Kaydet(true);
+
         if (EnvanterManager.Instance != null)
         {
             EnvanterManager.Instance.SavasModu(false); // Savaş bitti, envanteri aç
         }
+
+
 
     }
 
