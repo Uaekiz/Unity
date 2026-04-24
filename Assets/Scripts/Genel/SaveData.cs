@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Generic;
 
-[Serializable] // Bu satır verinin dosyaya yazılabilmesini sağlar
+[Serializable]
 public class SaveData
 {
     public bool oda1Temizlendi;
-    
-    // public float sesSeviyesi;
+    // İzlenen ara sahnelerin ID'lerini burada tutacağız
+    public List<string> izlenenAraSahneler = new List<string>();
 }

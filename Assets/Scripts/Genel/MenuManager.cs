@@ -1,8 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Sahne y�netimi i�in bu k�t�phane �art!
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("Giriş Ara Sahnesi Görselleri")]
+    public Sprite[] introGorselleri;
 
     void Start()
     {
@@ -11,26 +13,27 @@ public class MenuManager : MonoBehaviour
             Destroy(EnvanterManager.Instance.gameObject);
         }
     }
+
     public void PlayGame()
     {
-
-        GlobalData.sonCikisKapisi = "";
-        
-        if (GlobalData.oyunDurumlari != null)
+        // DÜZELTME: GlobalData yerine GameManager yazıyoruz
+        if (!GameManager.AraSahneIzlendiMi("Giris"))
         {
-            GlobalData.oyunDurumlari.Clear();
-        }
+            CutsceneSettings.oynatilacakGorseller = introGorselleri;
+            CutsceneSettings.sonrakiSahne = "SampleScene";
+            CutsceneSettings.mevcutAraSahneID = "Giris";
 
-        GameManager.oda1Temizlendi = SaveManager.Yukle();
-       
-        SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("AraSahne");
+        }
+        else
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 
     public void QuitGame()
     {
-        Debug.Log("Oyundan ��k�ld�.");
-        Application.Quit(); // Bu sadece ger�ek oyunda (exe/apk) �al���r
+        Debug.Log("Oyundan çıkıldı.");
+        Application.Quit();
     }
-
-    
 }

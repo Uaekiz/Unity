@@ -1,13 +1,30 @@
 using System.Collections;
+using System.Collections.Generic; // Dictionary için bu şart!
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Sahne değiştirmek için şart!
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // HAFIZA: Bu değişken sahne değişse bile RAM'de kalır (Static)
-    public static bool oda1Temizlendi = false;
+    // --- GLOBAL DATA GÖREVLERİ (ARTIK BURADA) ---
+    public static string sonCikisKapisi = "";
+    public static Dictionary<string, bool> oyunDurumlari = new Dictionary<string, bool>();
 
+    public static bool AraSahneIzlendiMi(string id)
+    {
+        string anahtar = "Izlendi_" + id;
+        return oyunDurumlari.ContainsKey(anahtar) ? oyunDurumlari[anahtar] : false;
+    }
+
+    public static void IzlendiOlarakIsaretle(string id)
+    {
+        string anahtar = "Izlendi_" + id;
+        if (oyunDurumlari.ContainsKey(anahtar)) oyunDurumlari[anahtar] = true;
+        else oyunDurumlari.Add(anahtar, true);
+    }
+    // --------------------------------------------
+
+    public static bool oda1Temizlendi = false;
     public static GameManager Instance;
 
     [Header("Gerekli Referanslar")]
@@ -18,9 +35,9 @@ public class GameManager : MonoBehaviour
     public Animator playerAnimator;
 
     [Header("Oda Durumu Objeleri")]
-    public GameObject canliDusmanlarGrubu; // EnemyAI'ların olduğu baba obje
-    public GameObject oluCesetlerGrubu;    // Sadece resimlerin olduğu baba obje
-    public GameObject geriDonButonu;       // Koridora dönme butonu
+    public GameObject canliDusmanlarGrubu;
+    public GameObject oluCesetlerGrubu;
+    public GameObject geriDonButonu;
 
     [Header("Düşman Takibi")]
     public int toplamDusmanSayisi;
@@ -31,9 +48,8 @@ public class GameManager : MonoBehaviour
     public float acilmaSuresi = 2.0f;
 
     [Header("GameOver Ayarları")]
-    public GameObject gameOverPanel; // Hazırladın paneli buraya sürükleyeceğiz
-    public string anaMenuSahneAdi = "MainMenu"; // Ana menü sahnenin tam adı
-
+    public GameObject gameOverPanel;
+    public string anaMenuSahneAdi = "MainMenu";
 
     private void Awake()
     {
@@ -42,65 +58,38 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // SAHNE AÇILDIĞINDA KONTROL ET
         if (oda1Temizlendi)
         {
-            // Eğer daha önce temizlediysek:
             Debug.Log("Oda zaten temiz. İnceleme modu yükleniyor...");
-
-            // 1. Canlıları yok et, Cesetleri aç
-            if (canliDusmanlarGrubu != null) Destroy(canliDusmanlarGrubu); // Direkt siliyoruz
+            if (canliDusmanlarGrubu != null) Destroy(canliDusmanlarGrubu);
             if (oluCesetlerGrubu != null) oluCesetlerGrubu.SetActive(true);
-
-            // 2. Savaş Arayüzünü Kapat, Geri Dön Butonunu Aç
             if (combatUI != null) combatUI.SetActive(false);
             if (playerArms != null) playerArms.SetActive(false);
             if (geriDonButonu != null) geriDonButonu.SetActive(true);
-
-            // 3. Ekranı normal başlat (Fade-in yapmaya gerek yok veya hızlı yapabilirsin)
         }
         else
         {
-            // Null kontrolü ekleyerek hatayı engelleyelim
-            if (EnvanterManager.Instance != null)
-            {
-                EnvanterManager.Instance.SavasModu(true);
-            }
-            else
-            {
-                Debug.LogWarning("EnvanterManager sahnede bulunamadı!");
-            }
-
+            if (EnvanterManager.Instance != null) EnvanterManager.Instance.SavasModu(true);
             if (oluCesetlerGrubu != null) oluCesetlerGrubu.SetActive(false);
             if (geriDonButonu != null) geriDonButonu.SetActive(false);
         }
     }
 
-    // --- ÖLÜM EKRANINI AÇAN FONKSİYON ---
     public void GameOver()
     {
-        Debug.Log("GameOver fonksiyonu tetiklendi!"); // Konsolda bunu görmelisin
-
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
             Time.timeScale = 0f;
-            Debug.Log("Panel aktif edildi ve zaman durduruldu.");
-        }
-        else
-        {
-            Debug.LogError("DİKKAT: GameManager içindeki GameOverPanel slotu BOŞ!");
         }
     }
 
-    // --- TEKRAR DENE BUTONU İÇİN ---
     public void TekrarDene()
     {
-        Time.timeScale = 1f; // Zamanı tekrar akıt
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Aynı sahneyi yeniden yükle
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // --- ANA SAYFA BUTONU İÇİN ---
     public void AnaSayfayaDon()
     {
         Time.timeScale = 1f;
@@ -110,7 +99,6 @@ public class GameManager : MonoBehaviour
     public void DusmanOldu()
     {
         olenDusmanSayisi++;
-
         if (olenDusmanSayisi >= toplamDusmanSayisi)
         {
             StartCoroutine(OlayYeriIncelemeModunaGec());
@@ -119,18 +107,10 @@ public class GameManager : MonoBehaviour
 
     IEnumerator OlayYeriIncelemeModunaGec()
     {
-        Debug.Log("Çatışma bitti.");
-
         yield return new WaitForSeconds(1f);
-
-        if (playerAnimator != null)
-        {
-            playerAnimator.SetTrigger("reload");
-        }
-
+        if (playerAnimator != null) playerAnimator.SetTrigger("reload");
         if (playerStats != null) playerStats.Heal(1000);
 
-        // --- EKRANI KARART ---
         float alpha = 0;
         while (alpha < 1)
         {
@@ -139,24 +119,14 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        // --- EKRAN SİMSİYAH: SAHNE ARKASI DEĞİŞİKLİĞİ ---
-
-        // 1. Canlı düşmanları kapat, ölü resimleri aç
         if (canliDusmanlarGrubu != null) canliDusmanlarGrubu.SetActive(false);
         if (oluCesetlerGrubu != null) oluCesetlerGrubu.SetActive(true);
-
-        // 2. Kolları ve UI'ı kapat
         if (combatUI != null) combatUI.SetActive(false);
         if (playerArms != null) playerArms.SetActive(false);
 
-        // 3. Geri Dön Butonunu Ortaya Çıkar
-
-        // Hafızaya Kaydet
         oda1Temizlendi = true;
-
         yield return new WaitForSeconds(1.0f);
 
-        // --- EKRANI AÇ ---
         while (alpha > 0)
         {
             alpha -= Time.deltaTime / acilmaSuresi;
@@ -164,26 +134,15 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("ARTIK İNCELEME MODUNDASIN!");
         if (geriDonButonu != null) geriDonButonu.SetActive(true);
-
-        GameManager.oda1Temizlendi = true;
         SaveManager.Kaydet(true);
 
-        if (EnvanterManager.Instance != null)
-        {
-            EnvanterManager.Instance.SavasModu(false); // Savaş bitti, envanteri aç
-        }
-
-
-
+        if (EnvanterManager.Instance != null) EnvanterManager.Instance.SavasModu(false);
     }
 
-    // --- BUTONA BAĞLAYACAĞIN FONKSİYON ---
     public void KoridoraDon()
     {
-        Debug.Log("Koridora dönülüyor...");
+        sonCikisKapisi = "Oda1"; // Artık direkt buna erişebiliriz
         SceneManager.LoadScene("SampleScene");
-        GlobalData.sonCikisKapisi = "Oda1";
     }
 }
