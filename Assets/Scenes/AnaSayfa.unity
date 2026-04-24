@@ -280,6 +280,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a73a0bf0f9cd0439b5474228b74ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
+  introGorselleri:
+  - {fileID: -855298285791758126, guid: 43afc8bf6a379d1429272fe16cdc6ce6, type: 3}
+  - {fileID: 6937817954938267909, guid: c1e7be5e88086e246868ef78b7ad8eaf, type: 3}
+  - {fileID: -6470460504253458178, guid: 20ad34c6cd7d6e045a28edcab10d80b9, type: 3}
+  - {fileID: -4178046375966092550, guid: 16bf456d0dc36444583bcd6b6911886d, type: 3}
 --- !u!4 &704742128
 Transform:
   m_ObjectHideFlags: 0
