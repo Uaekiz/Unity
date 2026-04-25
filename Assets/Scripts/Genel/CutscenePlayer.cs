@@ -1,94 +1,98 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; // TextMeshPro kullanacaðýmýz için bu þart
 using UnityEngine.SceneManagement;
 
 public class CutscenePlayer : MonoBehaviour
 {
     [Header("Görsel Referanslar")]
-    public Image displayImage;   // Ara sahne resminin göründüðü yer
-    public Image fadePanel;      // Siyah karartma paneli (Alpha 0 olmalý)
+    public Image displayImage;
+    public Image fadePanel;
+    public TextMeshProUGUI altYaziText; // UI'daki metin kutusu
 
     [Header("Ayarlar")]
-    public float fadeHizi = 1.0f; // Kararma ve açýlma hýzý
+    public float fadeHizi = 1.0f;
 
-    private int currentIndex = 0;
-    private bool isTransitioning = false; // Týklama spamýný engellemek için
+    private int currentImageIndex = 0;
+    private int currentTextIndex = 0; // O anki görselin kaçýncý metnindeyiz?
+    private bool isTransitioning = false;
 
     void Start()
     {
-        // 1. Kutuda resim var mý kontrol et
-        if (CutsceneSettings.oynatilacakGorseller != null && CutsceneSettings.oynatilacakGorseller.Length > 0)
+        if (CutsceneSettings.oynatilacakGorseller != null)
         {
             displayImage.sprite = CutsceneSettings.oynatilacakGorseller[0];
-
-            // Baþlangýçta fade panelini þeffaf yapalým
-            if (fadePanel != null)
-            {
-                fadePanel.color = new Color(0, 0, 0, 0);
-            }
-        }
-        else
-        {
-            Debug.LogError("Görsel bulunamadý! CutsceneSettings doldurulmamýþ.");
+            fadePanel.color = new Color(0, 0, 0, 0);
+            MetniGuncelle();
         }
     }
 
-    // Butonun 'OnClick' kýsmýna bunu baðla
-    public void SonrakiGorsel()
+    public void SonrakiAdim() // Butona baðlanan fonksiyon
     {
-        // Eðer þu an bir geçiþ yapýlýyorsa týklamayý engelle
         if (isTransitioning) return;
 
-        StartCoroutine(GecisSekansi());
+        // Mevcut görselin metinleri bitti mi?
+        if (currentTextIndex < CutsceneSettings.metinGruplari[currentImageIndex].Length - 1)
+        {
+            currentTextIndex++;
+            MetniGuncelle();
+        }
+        else
+        {
+            // Metinler bitti, sonraki görsele geç
+            StartCoroutine(GecisSekansi());
+        }
+    }
+
+    void MetniGuncelle()
+    {
+        string key = CutsceneSettings.metinGruplari[currentImageIndex][currentTextIndex];
+        altYaziText.text = LocalizationManager.GetText(key);
     }
 
     IEnumerator GecisSekansi()
     {
         isTransitioning = true;
+        currentImageIndex++;
 
-        // --- 1. ADIM: EKRANI KARART (Alpha 0 -> 1) ---
-        float alpha = 0;
-        while (alpha < 1)
+        if (currentImageIndex < CutsceneSettings.oynatilacakGorseller.Length)
         {
-            alpha += Time.deltaTime * fadeHizi;
-            fadePanel.color = new Color(0, 0, 0, alpha);
-            yield return null;
-        }
+            // Kararma
+            yield return StartCoroutine(Fade(1));
 
-        // --- 2. ADIM: RESMÝ DEÐÝÞTÝR ---
-        currentIndex++;
+            displayImage.sprite = CutsceneSettings.oynatilacakGorseller[currentImageIndex];
+            currentTextIndex = 0; // Yeni resim için metin sayacýný sýfýrla
+            MetniGuncelle();
 
-        if (currentIndex < CutsceneSettings.oynatilacakGorseller.Length)
-        {
-            displayImage.sprite = CutsceneSettings.oynatilacakGorseller[currentIndex];
-
-            // Ekran simsiyahken çok kýsa bekle (Daha sinematik durur)
             yield return new WaitForSeconds(0.2f);
 
-            // --- 3. ADIM: EKRANI AÇ (Alpha 1 -> 0) ---
-            while (alpha > 0)
-            {
-                alpha -= Time.deltaTime * fadeHizi;
-                fadePanel.color = new Color(0, 0, 0, alpha);
-                yield return null;
-            }
-
+            // Açýlma
+            yield return StartCoroutine(Fade(0));
             isTransitioning = false;
         }
         else
         {
-            // Resimler bittiyse sahneyi bitir
             SahneyiBitir();
+        }
+    }
+
+    IEnumerator Fade(float hedefAlpha)
+    {
+        float baslangicAlpha = fadePanel.color.a;
+        float zaman = 0;
+        while (zaman < 1)
+        {
+            zaman += Time.deltaTime * fadeHizi;
+            float alpha = Mathf.Lerp(baslangicAlpha, hedefAlpha, zaman);
+            fadePanel.color = new Color(0, 0, 0, alpha);
+            yield return null;
         }
     }
 
     void SahneyiBitir()
     {
-        // Ýzlendi bilgisini iþaretle
         GameManager.IzlendiOlarakIsaretle(CutsceneSettings.mevcutAraSahneID);
-
-        // Hedef sahneye git
         SceneManager.LoadScene(CutsceneSettings.sonrakiSahne);
     }
 }
