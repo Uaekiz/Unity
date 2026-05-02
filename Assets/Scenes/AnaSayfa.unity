@@ -614,10 +614,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
   introGorselleri:
-  - {fileID: -855298285791758126, guid: 43afc8bf6a379d1429272fe16cdc6ce6, type: 3}
-  - {fileID: 6937817954938267909, guid: c1e7be5e88086e246868ef78b7ad8eaf, type: 3}
-  - {fileID: -6470460504253458178, guid: 20ad34c6cd7d6e045a28edcab10d80b9, type: 3}
-  - {fileID: -4178046375966092550, guid: 16bf456d0dc36444583bcd6b6911886d, type: 3}
+  - {fileID: 4120901811166270815, guid: 58d824dd75c4ab34e8540d99e5abd26c, type: 3}
+  - {fileID: 2714453574471835212, guid: 821d0eb6edb5c5b46bf1b7fa9159855c, type: 3}
+  - {fileID: -345340437227008910, guid: b1913fed2a9bd0a478f0012bd8f4e39a, type: 3}
+  - {fileID: 3326971659086699885, guid: 9f6e358e71f111a4e8cb221f969190fa, type: 3}
 --- !u!4 &704742128
 Transform:
   m_ObjectHideFlags: 0
