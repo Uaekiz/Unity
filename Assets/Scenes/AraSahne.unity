@@ -427,7 +427,7 @@ MonoBehaviour:
   displayImage: {fileID: 744249933}
   fadePanel: {fileID: 1075823727}
   altYaziText: {fileID: 55058048}
-  fadeHizi: 1
+  fadeHizi: 2
 --- !u!114 &744249936
 MonoBehaviour:
   m_ObjectHideFlags: 0

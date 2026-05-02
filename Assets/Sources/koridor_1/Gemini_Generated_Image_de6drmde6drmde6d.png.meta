@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 58d824dd75c4ab34e8540d99e5abd26c
+guid: c000a7e78588b4740a64e1906254eabc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4120901811166270815
-    second: 1 1_0
+      213: -2526623467020979208
+    second: Gemini_Generated_Image_de6drmde6drmde6d_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1 1_0
+      name: Gemini_Generated_Image_de6drmde6drmde6d_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 14
-        width: 1950
-        height: 1090
+        x: 37
+        y: 1094
+        width: 1524
+        height: 498
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5554d02d52603930800000000000000
-      internalID: 4120901811166270815
+      spriteID: 8f37c07e751afecd0800000000000000
+      internalID: -2526623467020979208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gemini_Generated_Image_de6drmde6drmde6d_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 534
+        width: 1525
+        height: 498
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d46f05206c816c4ea8cb3bc5e82945c
+      internalID: -397554650
       vertices: []
       indices: 
       edges: []
@@ -164,7 +186,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 78dc2586f21376747891977ec8478ff6
+    spriteID: 668bf190d33b5bc499c90a6d508ff0aa
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +196,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1 1_0: 4120901811166270815
+      Gemini_Generated_Image_de6drmde6drmde6d_0: -2526623467020979208
+      Gemini_Generated_Image_de6drmde6drmde6d_1: -397554650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
