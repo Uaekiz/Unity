@@ -93,7 +93,7 @@ public class DoorController : MonoBehaviour
             kapiSesKaynagi.PlayOneShot(acilmaSesi);
             
             // Ses klibinin uzunluğu (saniye) kadar bekle
-            yield return new WaitForSeconds(acilmaSesi.length); 
+            yield return new WaitForSeconds(1.5f); 
         }
         else
         {

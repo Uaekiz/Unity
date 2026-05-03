@@ -541,7 +541,7 @@ RectTransform:
   m_GameObject: {fileID: 58745198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1168406044}
@@ -922,6 +922,7 @@ GameObject:
   - component: {fileID: 359235991}
   - component: {fileID: 359235990}
   - component: {fileID: 359235989}
+  - component: {fileID: 359235992}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -992,10 +993,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1301591945}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 359235992}
+        m_TargetAssemblyTypeName: PanelKapatici, Assembly-CSharp
+        m_MethodName: Kapat
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1042,6 +1043,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359235987}
   m_CullTransparentMesh: 1
+--- !u!114 &359235992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359235987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0af8d4eefb72c243882a3a353dfcf1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PanelKapatici
+  kapanacakPanel: {fileID: 1301591945}
+  kapanmaSesi: {fileID: 8300000, guid: b0688d384414ac0418e31d4162c3e399, type: 3}
 --- !u!1 &364242873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,10 +1640,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d9a573c9296f4197175700444a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
+  sokmeSesi: {fileID: 8300000, guid: 09bb3f9c3725bdf43be610cfde6c59cf, type: 3}
+  tamirSesi: {fileID: 8300000, guid: 587e8b9ed5fc5ac45bc979110b4574e6, type: 3}
   tip: 0
   slotID: O_Sigorta_Slot
-  "sokmeArac\u0131ID": Kontrol Kalemi
-  "kabloTamirArac\u0131ID": Bant
+  sokmeAraciID: Kontrol Kalemi
+  kabloTamirAraciID: Bant
   hedefLamba: {fileID: 0}
   yananLambaResmi: {fileID: 0}
   sokulmusResim: {fileID: -1742096869, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
@@ -2091,6 +2108,8 @@ MonoBehaviour:
   koridordaMi: 1
   elButonu: {fileID: 416972468}
   icindeEsyaVarMi: 1
+  panelAcilmaSesi: {fileID: 0}
+  esyaToplamaSesi: {fileID: 8300000, guid: 09bb3f9c3725bdf43be610cfde6c59cf, type: 3}
   esyaListesi:
   - esyaID: Kontrol Kalemi
     miktar: 1
@@ -2385,10 +2404,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d9a573c9296f4197175700444a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
+  sokmeSesi: {fileID: 8300000, guid: 09bb3f9c3725bdf43be610cfde6c59cf, type: 3}
+  tamirSesi: {fileID: 8300000, guid: 587e8b9ed5fc5ac45bc979110b4574e6, type: 3}
   tip: 0
   slotID: O_Kondaktor_Slot
-  "sokmeArac\u0131ID": Kontrol Kalemi
-  "kabloTamirArac\u0131ID": Bant
+  sokmeAraciID: Kontrol Kalemi
+  kabloTamirAraciID: Bant
   hedefLamba: {fileID: 0}
   yananLambaResmi: {fileID: 0}
   sokulmusResim: {fileID: 781644217, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
@@ -5331,10 +5352,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d9a573c9296f4197175700444a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
+  sokmeSesi: {fileID: 8300000, guid: 17f558ff7bb0ae041a7235a9f8b5920a, type: 3}
+  tamirSesi: {fileID: 8300000, guid: 587e8b9ed5fc5ac45bc979110b4574e6, type: 3}
   tip: 0
   slotID: K_Sigorta_Slot
-  "sokmeArac\u0131ID": Kontrol Kalemi
-  "kabloTamirArac\u0131ID": Bant
+  sokmeAraciID: Kontrol Kalemi
+  kabloTamirAraciID: Bant
   hedefLamba: {fileID: 1072317501}
   yananLambaResmi: {fileID: -6152847476200237124, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   sokulmusResim: {fileID: -1742096869, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
@@ -5353,6 +5376,7 @@ GameObject:
   - component: {fileID: 1424131071}
   - component: {fileID: 1424131070}
   - component: {fileID: 1424131069}
+  - component: {fileID: 1424131072}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5423,10 +5447,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 619089991}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1424131072}
+        m_TargetAssemblyTypeName: PanelKapatici, Assembly-CSharp
+        m_MethodName: Kapat
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5473,6 +5497,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424131067}
   m_CullTransparentMesh: 1
+--- !u!114 &1424131072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424131067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0af8d4eefb72c243882a3a353dfcf1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PanelKapatici
+  kapanacakPanel: {fileID: 619089991}
+  kapanmaSesi: {fileID: 8300000, guid: b0688d384414ac0418e31d4162c3e399, type: 3}
 --- !u!1 &1475309703
 GameObject:
   m_ObjectHideFlags: 0
@@ -5561,10 +5599,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d9a573c9296f4197175700444a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
+  sokmeSesi: {fileID: 8300000, guid: 17f558ff7bb0ae041a7235a9f8b5920a, type: 3}
+  tamirSesi: {fileID: 8300000, guid: 587e8b9ed5fc5ac45bc979110b4574e6, type: 3}
   tip: 1
   slotID: K_Kondaktor_Slot
-  "sokmeArac\u0131ID": Kontrol Kalemi
-  "kabloTamirArac\u0131ID": Bant
+  sokmeAraciID: Kontrol Kalemi
+  kabloTamirAraciID: Bant
   hedefLamba: {fileID: 208066960}
   yananLambaResmi: {fileID: -602898634856900701, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   sokulmusResim: {fileID: 781644217, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
@@ -5826,6 +5866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aff876430875464a96d61a4325a3be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AsansorKontrol
+  asansorSesi: {fileID: 8300000, guid: e84b784cf6837d64c9309f3395bd03ae, type: 3}
   asansorSprite: {fileID: 1563514123}
   calisirGorsel: {fileID: -7465814216780502915, guid: 53e6303e9fb76ff4db68dd9ea37ab41c, type: 3}
   asansorAnimator: {fileID: 1563514127}
@@ -6166,6 +6207,8 @@ MonoBehaviour:
   koridordaMi: 1
   elButonu: {fileID: 416972468}
   icindeEsyaVarMi: 0
+  panelAcilmaSesi: {fileID: 8300000, guid: 91ec603b78a4c864fb0087229595d2e9, type: 3}
+  esyaToplamaSesi: {fileID: 0}
   esyaListesi: []
   kapaliResim: {fileID: 721820678434150371, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   acikBosResim: {fileID: 721820678434150371, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
@@ -7107,10 +7150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d9a573c9296f4197175700444a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
+  sokmeSesi: {fileID: 0}
+  tamirSesi: {fileID: 8300000, guid: 671105de4b3babe4d8a091a98772bb6f, type: 3}
   tip: 2
   slotID: K_Kablo_Slot
-  "sokmeArac\u0131ID": Kontrol Kalemi
-  "kabloTamirArac\u0131ID": Bant
+  sokmeAraciID: Kontrol Kalemi
+  kabloTamirAraciID: Bant
   hedefLamba: {fileID: 1320084441}
   yananLambaResmi: {fileID: 7339715108912728323, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   sokulmusResim: {fileID: 0}

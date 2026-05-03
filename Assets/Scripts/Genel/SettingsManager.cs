@@ -43,8 +43,6 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    
-
     // Mevcut genel ses ayarın (Ana Ses için)
     public void SesSeviyesiniAyarla(float sesDegeri)
     {

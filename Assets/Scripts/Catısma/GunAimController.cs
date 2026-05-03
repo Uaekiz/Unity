@@ -8,6 +8,12 @@ public class GunAimController : MonoBehaviour
     public Joystick joystick;
     private Animator animator;
 
+    [Header("Silah Sesleri")]
+    public AudioSource silahSesKaynagi;  // Silahın üzerindeki AudioSource
+    public AudioClip atesSesi;           // Gerçek ateş (Güm!) sesi
+    public AudioClip bosTetikSesi;
+    public AudioClip reloadSesi;
+
     // Durum Kontrolü
     private bool isCurrentlyAiming = false;
 
@@ -98,23 +104,40 @@ public class GunAimController : MonoBehaviour
     public AmmoManager ammoManager;
     public void ShootGun()
     {
-        // EMNİYET: Elin joystickte değilse (nişan almıyorsan) ATEŞ ETME.
-        // Joystick ortada olsa bile elin üstündeyse 'isCurrentlyAiming' true olacağı için burası çalışır.
+        // Nişan almıyorsan hiçbir şey yapma (Ses de çıkmasın)
         if (!isCurrentlyAiming)
         {
             return;
         }
 
+        // 1. DURUM: MERMİ BİTTİYSE (BOŞ TETİK SESİ ÇAL)
         if (ammoManager != null && !ammoManager.CanShoot())
         {
             Debug.Log("Mermi Bitti!");
+            
+            // Eğer silah boş tetik sesi çalmaya müsaitse (seri basmayı engellemek için fireRate eklenebilir)
+            if (Time.time >= nextFireTime)
+            {
+                 if (silahSesKaynagi != null && bosTetikSesi != null)
+                 {
+                     silahSesKaynagi.PlayOneShot(bosTetikSesi);
+                 }
+                 nextFireTime = Time.time + fireRate; // Spami engelle
+            }
             return; // Mermi yoksa ateş etme, fonksiyonu burada bitir.
         }
 
+        // 2. DURUM: MERMİ VAR VE ATEŞ EDEBİLİRİZ (GERÇEK ATEŞ SESİ ÇAL)
         if (Time.time >= nextFireTime)
         {
             StartCoroutine(FireProcess());
             nextFireTime = Time.time + fireRate;
+
+            // Ateş sesini fırlat
+            if (silahSesKaynagi != null && atesSesi != null)
+            {
+                silahSesKaynagi.PlayOneShot(atesSesi);
+            }
 
             if (ammoManager != null)
             {
@@ -185,7 +208,13 @@ public class GunAimController : MonoBehaviour
 
         if (animator != null) animator.SetTrigger("reload");
 
-        // Animasyonun süresi kadar bekle (Örn: 1.5 saniye)
+        // GÜVENLİ SES ÇALMA KISMI (Burayı değiştirdik)
+        if (silahSesKaynagi != null && reloadSesi != null)
+        {
+             silahSesKaynagi.PlayOneShot(reloadSesi);
+        }
+
+        // Animasyonun süresi kadar bekle (Örn: 2.16 saniye)
         yield return new WaitForSeconds(2.16f);
 
         ammoManager.ResetAmmo();
