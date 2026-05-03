@@ -541,7 +541,7 @@ RectTransform:
   m_GameObject: {fileID: 58745198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1168406044}
@@ -922,6 +922,7 @@ GameObject:
   - component: {fileID: 359235991}
   - component: {fileID: 359235990}
   - component: {fileID: 359235989}
+  - component: {fileID: 359235992}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -992,10 +993,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1301591945}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 359235992}
+        m_TargetAssemblyTypeName: PanelKapatici, Assembly-CSharp
+        m_MethodName: Kapat
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1042,6 +1043,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359235987}
   m_CullTransparentMesh: 1
+--- !u!114 &359235992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359235987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0af8d4eefb72c243882a3a353dfcf1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PanelKapatici
+  kapanacakPanel: {fileID: 1301591945}
+  kapanmaSesi: {fileID: 8300000, guid: b0688d384414ac0418e31d4162c3e399, type: 3}
 --- !u!1 &364242873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,10 +1640,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d9a573c9296f4197175700444a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
+  sokmeSesi: {fileID: 8300000, guid: 09bb3f9c3725bdf43be610cfde6c59cf, type: 3}
+  tamirSesi: {fileID: 8300000, guid: 587e8b9ed5fc5ac45bc979110b4574e6, type: 3}
   tip: 0
   slotID: O_Sigorta_Slot
-  "sokmeArac\u0131ID": Kontrol Kalemi
-  "kabloTamirArac\u0131ID": Bant
+  sokmeAraciID: Kontrol Kalemi
+  kabloTamirAraciID: Bant
   hedefLamba: {fileID: 0}
   yananLambaResmi: {fileID: 0}
   sokulmusResim: {fileID: -1742096869, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
@@ -2091,6 +2108,8 @@ MonoBehaviour:
   koridordaMi: 1
   elButonu: {fileID: 416972468}
   icindeEsyaVarMi: 1
+  panelAcilmaSesi: {fileID: 0}
+  esyaToplamaSesi: {fileID: 8300000, guid: 09bb3f9c3725bdf43be610cfde6c59cf, type: 3}
   esyaListesi:
   - esyaID: Kontrol Kalemi
     miktar: 1
@@ -2385,10 +2404,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d9a573c9296f4197175700444a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
+  sokmeSesi: {fileID: 8300000, guid: 09bb3f9c3725bdf43be610cfde6c59cf, type: 3}
+  tamirSesi: {fileID: 8300000, guid: 587e8b9ed5fc5ac45bc979110b4574e6, type: 3}
   tip: 0
   slotID: O_Kondaktor_Slot
-  "sokmeArac\u0131ID": Kontrol Kalemi
-  "kabloTamirArac\u0131ID": Bant
+  sokmeAraciID: Kontrol Kalemi
+  kabloTamirAraciID: Bant
   hedefLamba: {fileID: 0}
   yananLambaResmi: {fileID: 0}
   sokulmusResim: {fileID: 781644217, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
@@ -2606,6 +2627,7 @@ GameObject:
   - component: {fileID: 624165000}
   - component: {fileID: 624164998}
   - component: {fileID: 624165001}
+  - component: {fileID: 624165002}
   m_Layer: 0
   m_Name: Locked_1
   m_TagString: Untagged
@@ -2747,6 +2769,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactButton: {fileID: 416972466}
   isLocked: 1
+  kapiSesKaynagi: {fileID: 624165002}
+  kilitliSesi: {fileID: 8300000, guid: f16175b0dff59c142a36d944a95b607f, type: 3}
+  acilmaSesi: {fileID: 0}
 --- !u!95 &624165000
 Animator:
   serializedVersion: 7
@@ -2796,6 +2821,103 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!82 &624165002
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624164993}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &664711826
 GameObject:
   m_ObjectHideFlags: 0
@@ -5230,10 +5352,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d9a573c9296f4197175700444a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
+  sokmeSesi: {fileID: 8300000, guid: 17f558ff7bb0ae041a7235a9f8b5920a, type: 3}
+  tamirSesi: {fileID: 8300000, guid: 587e8b9ed5fc5ac45bc979110b4574e6, type: 3}
   tip: 0
   slotID: K_Sigorta_Slot
-  "sokmeArac\u0131ID": Kontrol Kalemi
-  "kabloTamirArac\u0131ID": Bant
+  sokmeAraciID: Kontrol Kalemi
+  kabloTamirAraciID: Bant
   hedefLamba: {fileID: 1072317501}
   yananLambaResmi: {fileID: -6152847476200237124, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   sokulmusResim: {fileID: -1742096869, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
@@ -5252,6 +5376,7 @@ GameObject:
   - component: {fileID: 1424131071}
   - component: {fileID: 1424131070}
   - component: {fileID: 1424131069}
+  - component: {fileID: 1424131072}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5322,10 +5447,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 619089991}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1424131072}
+        m_TargetAssemblyTypeName: PanelKapatici, Assembly-CSharp
+        m_MethodName: Kapat
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5372,6 +5497,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424131067}
   m_CullTransparentMesh: 1
+--- !u!114 &1424131072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424131067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0af8d4eefb72c243882a3a353dfcf1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PanelKapatici
+  kapanacakPanel: {fileID: 619089991}
+  kapanmaSesi: {fileID: 8300000, guid: b0688d384414ac0418e31d4162c3e399, type: 3}
 --- !u!1 &1475309703
 GameObject:
   m_ObjectHideFlags: 0
@@ -5460,10 +5599,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d9a573c9296f4197175700444a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
+  sokmeSesi: {fileID: 8300000, guid: 17f558ff7bb0ae041a7235a9f8b5920a, type: 3}
+  tamirSesi: {fileID: 8300000, guid: 587e8b9ed5fc5ac45bc979110b4574e6, type: 3}
   tip: 1
   slotID: K_Kondaktor_Slot
-  "sokmeArac\u0131ID": Kontrol Kalemi
-  "kabloTamirArac\u0131ID": Bant
+  sokmeAraciID: Kontrol Kalemi
+  kabloTamirAraciID: Bant
   hedefLamba: {fileID: 208066960}
   yananLambaResmi: {fileID: -602898634856900701, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   sokulmusResim: {fileID: 781644217, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
@@ -5725,6 +5866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aff876430875464a96d61a4325a3be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AsansorKontrol
+  asansorSesi: {fileID: 8300000, guid: e84b784cf6837d64c9309f3395bd03ae, type: 3}
   asansorSprite: {fileID: 1563514123}
   calisirGorsel: {fileID: -7465814216780502915, guid: 53e6303e9fb76ff4db68dd9ea37ab41c, type: 3}
   asansorAnimator: {fileID: 1563514127}
@@ -6065,6 +6207,8 @@ MonoBehaviour:
   koridordaMi: 1
   elButonu: {fileID: 416972468}
   icindeEsyaVarMi: 0
+  panelAcilmaSesi: {fileID: 8300000, guid: 91ec603b78a4c864fb0087229595d2e9, type: 3}
+  esyaToplamaSesi: {fileID: 0}
   esyaListesi: []
   kapaliResim: {fileID: 721820678434150371, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   acikBosResim: {fileID: 721820678434150371, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
@@ -6424,6 +6568,7 @@ GameObject:
   - component: {fileID: 1920634934}
   - component: {fileID: 1920634936}
   - component: {fileID: 1920634937}
+  - component: {fileID: 1920634938}
   m_Layer: 6
   m_Name: Open_2
   m_TagString: Untagged
@@ -6614,7 +6759,107 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactButton: {fileID: 416972466}
   isLocked: 0
+  kapiSesKaynagi: {fileID: 1920634938}
+  kilitliSesi: {fileID: 0}
+  acilmaSesi: {fileID: 8300000, guid: 224ad773434cba941ba24092e9e0184c, type: 3}
   targetSceneName: TheRoom
+--- !u!82 &1920634938
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920634931}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1946538920
 GameObject:
   m_ObjectHideFlags: 0
@@ -6905,10 +7150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436d9a573c9296f4197175700444a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulmacaSlotKontrol
+  sokmeSesi: {fileID: 0}
+  tamirSesi: {fileID: 8300000, guid: 671105de4b3babe4d8a091a98772bb6f, type: 3}
   tip: 2
   slotID: K_Kablo_Slot
-  "sokmeArac\u0131ID": Kontrol Kalemi
-  "kabloTamirArac\u0131ID": Bant
+  sokmeAraciID: Kontrol Kalemi
+  kabloTamirAraciID: Bant
   hedefLamba: {fileID: 1320084441}
   yananLambaResmi: {fileID: 7339715108912728323, guid: 1e0deeaf01ede3540847cd7a2909e209, type: 3}
   sokulmusResim: {fileID: 0}
@@ -7208,6 +7455,7 @@ GameObject:
   - component: {fileID: 2138440791}
   - component: {fileID: 2138440793}
   - component: {fileID: 2138440795}
+  - component: {fileID: 2138440796}
   m_Layer: 0
   m_Name: Locked_3
   m_TagString: Untagged
@@ -7398,6 +7646,106 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactButton: {fileID: 416972466}
   isLocked: 1
+  kapiSesKaynagi: {fileID: 2138440796}
+  kilitliSesi: {fileID: 8300000, guid: f16175b0dff59c142a36d944a95b607f, type: 3}
+  acilmaSesi: {fileID: 0}
+--- !u!82 &2138440796
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138440788}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

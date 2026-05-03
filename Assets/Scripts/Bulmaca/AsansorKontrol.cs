@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class AsansorKontrol : MonoBehaviour
 {
-    [Header("G�rsel Ayarlar")]
+    [Header("Asansör Sesi")]
+    public AudioClip asansorSesi;
+
+    [Header("GGrsel Ayarlar")]
     public SpriteRenderer asansorSprite;
     public Sprite calisirGorsel;
 
@@ -119,6 +122,10 @@ public class AsansorKontrol : MonoBehaviour
 
         // --- PANEL KAPANDIKTAN SONRA 1.5 SAN�YE DAHA BEKLE ---
         yield return new WaitForSeconds(1.5f);
+        if (ArayuzSesleri.Instance != null && asansorSesi != null)
+        {
+            ArayuzSesleri.Instance.PanelSesiCal(asansorSesi);
+        }
 
         // 3. A�AMADA: ASANS�R� �ALI�TIR
         if (asansorSprite != null && calisirGorsel != null)

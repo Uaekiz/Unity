@@ -3,12 +3,15 @@ using System.Collections.Generic; // Dictionary için bu şart!
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
     // --- GLOBAL DATA GÖREVLERİ (ARTIK BURADA) ---
     public static string sonCikisKapisi = "";
     public static Dictionary<string, bool> oyunDurumlari = new Dictionary<string, bool>();
+
+    
 
     public static bool AraSahneIzlendiMi(string id)
     {
@@ -50,6 +53,10 @@ public class GameManager : MonoBehaviour
     [Header("GameOver Ayarları")]
     public GameObject gameOverPanel;
     public string anaMenuSahneAdi = "MainMenu";
+
+    [Header("Silah Sesleri")]
+    public AudioSource silahSesKaynagi;  // Silahın üzerindeki AudioSource
+    public AudioClip reload;           // Gerçek ateş (Güm!)
 
     private void Awake()
     {
@@ -108,6 +115,12 @@ public class GameManager : MonoBehaviour
     IEnumerator OlayYeriIncelemeModunaGec()
     {
         yield return new WaitForSeconds(1f);
+
+        if (silahSesKaynagi != null && reload != null)
+        {
+             silahSesKaynagi.PlayOneShot(reload);
+        } // Olay yeri inceleme moduna geçerken bir ses efekti çalabiliriz
+
         if (playerAnimator != null) playerAnimator.SetTrigger("reload");
         if (playerStats != null) playerStats.Heal(1000);
 

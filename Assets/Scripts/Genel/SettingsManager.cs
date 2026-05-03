@@ -8,6 +8,9 @@ public class SettingsManager : MonoBehaviour
     [Header("UI Referansları")]
     public GameObject ayarlarPaneli;
 
+    [Header("Ses Ayarlari")]
+    public float anlikMuzikSesi = 1f; // Müzik eklendiğinde bu değeri okuyacağız
+
     void Awake()
     {
         // Eğer sahnede zaten bir Ayarlar yöneticisi varsa, yenisini yok et (Kopya oluşumunu engeller)
@@ -38,5 +41,20 @@ public class SettingsManager : MonoBehaviour
         {
             ayarlarPaneli.SetActive(false);
         }
+    }
+
+    // Mevcut genel ses ayarın (Ana Ses için)
+    public void SesSeviyesiniAyarla(float sesDegeri)
+    {
+        AudioListener.volume = sesDegeri; 
+    }
+
+    // YENİ: Sadece müzik slider'ı için hazırlık
+    public void MuzikSeviyesiniAyarla(float muzikDegeri)
+    {
+        anlikMuzikSesi = muzikDegeri;
+        
+        // İleride müziği eklediğinde buraya şu tarz bir kod gelecek:
+        // if(arkaPlanMuzigi != null) arkaPlanMuzigi.volume = anlikMuzikSesi;
     }
 }

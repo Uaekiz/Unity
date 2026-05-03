@@ -6,21 +6,25 @@ public class BulmacaSlotKontrol : MonoBehaviour, IDropHandler
 {
     public enum ParcaTipi { Sigorta, Kondaktor, Kablo }
 
-    [Header("Slot Ayarlarý")]
+    [Header("Ses AyarlarÄ±")]
+    public AudioClip sokmeSesi; // ParÃ§ayÄ± sÃ¶kÃ¼p aldÄ±ÄŸÄ±mÄ±zda Ã§Ä±kacak ses
+    public AudioClip tamirSesi; // ParÃ§ayÄ± yerine taktÄ±ÄŸÄ±mÄ±zda Ã§Ä±kacak ses
+
+    [Header("Slot Ayarlarï¿½")]
     public ParcaTipi tip;
     public string slotID;
 
-    [Header("Gereç Tanýmlamalarý")]
-    public string sokmeAracýID = "Kontrol Kalemi";
-    public string kabloTamirAracýID = "Bant";
+    [Header("Gereï¿½ Tanï¿½mlamalarï¿½")]
+    public string sokmeAraciID = "Kontrol Kalemi";
+    public string kabloTamirAraciID = "Bant";
 
-    [Header("Lamba & Görsel Ayarlar")]
+    [Header("Lamba & Gï¿½rsel Ayarlar")]
     public Image hedefLamba;
     public Sprite yananLambaResmi;
     public Sprite sokulmusResim;
     public Sprite tamirResim;
 
-    [Header("Eþya Verme Ayarlarý")]
+    [Header("Eï¿½ya Verme Ayarlarï¿½")]
     public bool sokunceEsyaVersinMi = false;
     public string verilecekEsyaID;
 
@@ -34,12 +38,12 @@ public class BulmacaSlotKontrol : MonoBehaviour, IDropHandler
     {
         if (string.IsNullOrEmpty(slotID)) return;
 
-        // Tamir Durumu Kontrolü
+        // Tamir Durumu Kontrolï¿½
         if (GlobalData.DurumNedir("T_" + slotID))
         {
             SetTamirEdildi(true);
         }
-        // Sökülme Durumu Kontrolü
+        // Sï¿½kï¿½lme Durumu Kontrolï¿½
         else if (GlobalData.DurumNedir(slotID))
         {
             SetSokuldu();
@@ -51,21 +55,21 @@ public class BulmacaSlotKontrol : MonoBehaviour, IDropHandler
         BulmacaSurukle esya = eventData.pointerDrag?.GetComponent<BulmacaSurukle>();
         if (esya == null) return;
 
-        // 1. SÖKME
-        if (esya.esyaID == sokmeAracýID && !isSokuldu && tip != ParcaTipi.Kablo)
+        // 1. Sï¿½KME
+        if (esya.esyaID == sokmeAraciID && !isSokuldu && tip != ParcaTipi.Kablo)
         {
             SokmeIslemi();
         }
-        // 2. TAMÝR (Normal Parçalar)
+        // 2. TAMï¿½R (Normal Parï¿½alar)
         else if (isSokuldu && !isTamirEdildi && esya.esyaID == tip.ToString())
         {
             EsyayiEnvanterdenSil(esya.esyaID);
             TamirEt();
         }
-        // 3. TAMÝR (Kablo & Bant)
-        else if (tip == ParcaTipi.Kablo && !isTamirEdildi && esya.esyaID == kabloTamirAracýID)
+        // 3. TAMï¿½R (Kablo & Bant)
+        else if (tip == ParcaTipi.Kablo && !isTamirEdildi && esya.esyaID == kabloTamirAraciID)
         {
-            EsyayiEnvanterdenSil(kabloTamirAracýID);
+            EsyayiEnvanterdenSil(kabloTamirAraciID);
             TamirEt();
         }
     }
@@ -74,10 +78,16 @@ public class BulmacaSlotKontrol : MonoBehaviour, IDropHandler
     {
         SetTamirEdildi(false); 
 
-        // Asansör Kontrolü
+        // AsansÃ¶r KontrolÃ¼
         Object.FindFirstObjectByType<AsansorKontrol>()?.Denetle();
 
         Debug.Log($"{slotID} tamir edildi!");
+
+        // --- YENÄ° EKLENEN: TAMÄ°R ETME / PARÃ‡A TAKMA SESÄ° ---
+        if (ArayuzSesleri.Instance != null && tamirSesi != null)
+        {
+            ArayuzSesleri.Instance.PanelSesiCal(tamirSesi);
+        }
     }
 
     void SetTamirEdildi(bool loadingFromStart)
@@ -97,15 +107,21 @@ public class BulmacaSlotKontrol : MonoBehaviour, IDropHandler
     {
         SetSokuldu();
 
-        // Hafýza kaydý
+        // HafÄ±za kaydÄ±
         if (!string.IsNullOrEmpty(slotID))
             GlobalData.DurumKaydet(slotID, true);
 
-        // Eþya Verme
+        // EÅŸya Verme
         if (sokunceEsyaVersinMi && !string.IsNullOrEmpty(verilecekEsyaID))
         {
             GlobalData.DurumKaydet(verilecekEsyaID, true);
             ArayuzleriYenile();
+        }
+
+        // --- YENÄ° EKLENEN: SÃ–KME / EÅžYA ALMA SESÄ° ---
+        if (ArayuzSesleri.Instance != null && sokmeSesi != null)
+        {
+            ArayuzSesleri.Instance.PanelSesiCal(sokmeSesi);
         }
     }
 
@@ -126,7 +142,7 @@ public class BulmacaSlotKontrol : MonoBehaviour, IDropHandler
         // Ana Envanter
         EnvanterManager.Instance?.ArayuzuGuncelle();
 
-        // Bulmaca Envanteri (Parent üzerinden veya sahnede bulma)
+        // Bulmaca Envanteri (Parent ï¿½zerinden veya sahnede bulma)
         BulmacaEnvanterSistemi bulmacaEnv = GetComponentInParent<BulmacaEnvanterSistemi>()
                                           ?? Object.FindFirstObjectByType<BulmacaEnvanterSistemi>();
 

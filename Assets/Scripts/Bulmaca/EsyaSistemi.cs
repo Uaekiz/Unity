@@ -11,6 +11,10 @@ public class EsyaSistemi : MonoBehaviour
     [Header("İçerik Ayarları")]
     public bool icindeEsyaVarMi = true;
 
+    [Header("Ses Ayarları")]
+    public AudioClip panelAcilmaSesi;
+    public AudioClip esyaToplamaSesi;
+
     [System.Serializable]
     public struct EsyaBilgisi
     {
@@ -80,7 +84,16 @@ public class EsyaSistemi : MonoBehaviour
             if (cachedPanel == null && EnvanterManager.Instance != null)
                 cachedPanel = DerinlerdeAra(EnvanterManager.Instance.transform, acilacakPanelIsmi);
 
-            if (cachedPanel != null) cachedPanel.SetActive(true);
+            if (cachedPanel != null) 
+            {
+                cachedPanel.SetActive(true); // Panel ekrana geliyor
+                
+                // YENİ: Panel ekrana geldiği an sesi çal!
+                if (ArayuzSesleri.Instance != null && panelAcilmaSesi != null)
+                {
+                    ArayuzSesleri.Instance.PanelSesiCal(panelAcilmaSesi);
+                }
+            }
         }
 
         bool envanterDoluMu = HepsiniAldikMi();
@@ -97,6 +110,11 @@ public class EsyaSistemi : MonoBehaviour
                 {
                     GlobalData.DurumKaydet(esya.esyaID, true);
                     Debug.Log($"{esya.miktar} adet {esya.esyaID} alındı!");
+                }
+
+                if (ArayuzSesleri.Instance != null && esyaToplamaSesi != null)
+                {
+                    ArayuzSesleri.Instance.PanelSesiCal(esyaToplamaSesi);
                 }
 
                 if (EnvanterManager.Instance != null)
