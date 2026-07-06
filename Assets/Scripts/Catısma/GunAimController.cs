@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GunAimController : MonoBehaviour
@@ -13,6 +14,7 @@ public class GunAimController : MonoBehaviour
     public AudioClip atesSesi;           // Gerçek ateş (Güm!) sesi
     public AudioClip bosTetikSesi;
     public AudioClip reloadSesi;
+    public AudioClip silahKurulumSesi;
 
     // Durum Kontrolü
     private bool isCurrentlyAiming = false;
@@ -37,6 +39,14 @@ public class GunAimController : MonoBehaviour
 
         initialPosition = transform.localPosition;
         if (lineRenderer != null) lineRenderer.enabled = false;
+
+        if (SceneManager.GetActiveScene().name == "TheRoom" && !GameManager.oda1Temizlendi)
+        {
+            if (silahSesKaynagi != null && silahKurulumSesi != null)
+            {
+                silahSesKaynagi.PlayOneShot(silahKurulumSesi);
+            }
+        }
     }
 
     void Update()

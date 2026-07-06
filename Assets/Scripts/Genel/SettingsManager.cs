@@ -1,23 +1,23 @@
 using UnityEngine;
+using UnityEngine.UI; // Slider ile etkileşim kurabilmek için ekledik
 
 public class SettingsManager : MonoBehaviour
 {
-    // Singleton yapısı: Her yerden kolayca ulaşabilmemizi sağlar
     public static SettingsManager Instance;
 
     [Header("UI Referansları")]
     public GameObject ayarlarPaneli;
+    public Slider anaSesSlider; // YENİ: Unity arayüzünden buraya ses slider'ını sürükle
 
     [Header("Ses Ayarlari")]
-    public float anlikMuzikSesi = 1f; // Müzik eklendiğinde bu değeri okuyacağız
+    public float anlikMuzikSesi = 1f;
 
     void Awake()
     {
-        // Eğer sahnede zaten bir Ayarlar yöneticisi varsa, yenisini yok et (Kopya oluşumunu engeller)
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Ölüm ekranında veya odalarda silinmesini engeller
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -25,7 +25,22 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    // Bu fonksiyonu butonlara bağlayacağız
+    void Start()
+    {
+        // YENİ: Oyun başladığında daha önceden kaydedilmiş sesi bul. 
+        // Eğer daha önce hiç kaydedilmemişse (ilk açılış), sesi 1 (ful) yap.
+        float kayitliSes = PlayerPrefs.GetFloat("OyunSesi", 1f);
+        
+        // Unity'nin ana şalterini bu kayıtlı sese ayarla
+        AudioListener.volume = kayitliSes;
+
+        // Ayarlar menüsündeki Slider'ın çubuğunu da bu değere getir
+        if (anaSesSlider != null)
+        {
+            anaSesSlider.value = kayitliSes;
+        }
+    }
+
     public void AyarlariAc()
     {
         if (ayarlarPaneli != null)
@@ -34,7 +49,6 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    // Çarpı (X) veya Geri butonuna bağlayacağız
     public void AyarlariKapat()
     {
         if (ayarlarPaneli != null)
@@ -43,18 +57,22 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    // Mevcut genel ses ayarın (Ana Ses için)
+    // Slider hareket ettikçe bu fonksiyon çalışır
     public void SesSeviyesiniAyarla(float sesDegeri)
     {
         AudioListener.volume = sesDegeri; 
+        
+        // YENİ: Oyuncu slider'ı her kaydırdığında bu değeri kalıcı olarak sisteme kaydet
+        PlayerPrefs.SetFloat("OyunSesi", sesDegeri);
+        PlayerPrefs.Save();
     }
 
-    // YENİ: Sadece müzik slider'ı için hazırlık
     public void MuzikSeviyesiniAyarla(float muzikDegeri)
     {
         anlikMuzikSesi = muzikDegeri;
         
-        // İleride müziği eklediğinde buraya şu tarz bir kod gelecek:
-        // if(arkaPlanMuzigi != null) arkaPlanMuzigi.volume = anlikMuzikSesi;
+        // Müziği de kalıcı kaydedelim
+        PlayerPrefs.SetFloat("MuzikSesi", muzikDegeri);
+        PlayerPrefs.Save();
     }
 }

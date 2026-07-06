@@ -45,6 +45,10 @@ public class EnemyAI : MonoBehaviour
     public Transform player; 
     private PlayerStats playerStats;
 
+    [Header("Düşman Sesleri")]
+    public AudioSource dusmanSesKaynagi; // Düşmanın üzerindeki AudioSource
+    public AudioClip tekElAtesSesi;
+
     // Gizlilik kontrolü
     private bool isAcikta = false; 
 
@@ -116,6 +120,8 @@ public class EnemyAI : MonoBehaviour
                 yield return new WaitForSeconds(atisHizi);
             }
 
+            StartCoroutine(SesiYumusakcaKes(0.06f));
+
             // --- SAVAŞ SONRASI BEKLEME ---
             if (siperKullanirMi && !isDead)
             {
@@ -137,10 +143,35 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    IEnumerator SesiYumusakcaKes(float fadeSuresi = 0.05f)
+    {
+        if (dusmanSesKaynagi != null && dusmanSesKaynagi.isPlaying)
+        {
+            float baslangicSes = dusmanSesKaynagi.volume;
+            
+            for (float t = 0; t < fadeSuresi; t += Time.deltaTime)
+            {
+                dusmanSesKaynagi.volume = Mathf.Lerp(baslangicSes, 0f, t / fadeSuresi);
+                yield return null;
+            }
+
+            dusmanSesKaynagi.Stop();
+            dusmanSesKaynagi.volume = baslangicSes; // Sonraki atışlar için sesi eski haline getir
+        }
+    }
+
     void FireShot(bool isabetEtsinMi)
     {
         // Ates_Bekleme'den çıkıp ateş animasyonuna girmesi için trigger'ı ateşliyoruz
         animator.SetTrigger("Ates");
+
+        if (dusmanSesKaynagi != null && tekElAtesSesi != null)
+        {
+            dusmanSesKaynagi.volume = 1f; // Sesi fulle (önceki fade-out'tan kalma olmasın)
+            dusmanSesKaynagi.pitch = Random.Range(0.96f, 1.04f); // Hafif ton çeşitliliği
+            dusmanSesKaynagi.clip = tekElAtesSesi;
+            dusmanSesKaynagi.Play(); 
+        }
 
         if (firePoint != null && player != null)
         {
