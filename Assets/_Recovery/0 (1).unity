@@ -1146,7 +1146,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2134582778}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: SesSeviyesiniAyarla
+        m_MethodName: MuzikSeviyesiniAyarla
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1248,7 +1248,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2134582778}
         m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
-        m_MethodName: MuzikSeviyesiniAyarla
+        m_MethodName: SesSeviyesiniAyarla
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
