@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour
     private float currentHealth;
     public bool isDead = false;
 
-    [Header("Örüntülü Saldırı Ayarları (YENİ)")]
+    [Header("Örüntülü Saldırı Ayarları")]
     public List<SaldiriDeseni> saldiriDuzenleri; // Inspector'dan dolduracağın liste
     private int suankiDuzenIndex = 0; // Hangi sıradayız?
 
@@ -162,6 +162,7 @@ public class EnemyAI : MonoBehaviour
 
     void FireShot(bool isabetEtsinMi)
     {
+        animator.ResetTrigger("Ates");
         // Ates_Bekleme'den çıkıp ateş animasyonuna girmesi için trigger'ı ateşliyoruz
         animator.SetTrigger("Ates");
 
