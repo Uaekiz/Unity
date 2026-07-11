@@ -10,10 +10,11 @@ public class IntroVideoManager : MonoBehaviour
     public GameObject combatUI;
     public GameObject envanterUI;
     public Image fadePanel;
+    public RawImage videoEkrani; // YENÝ: Canvas'ta oluþturduðumuz Raw Image'ý buraya baðlayacaðýz
 
     [Header("Ayarlar")]
     public float fadeHizi = 1.5f;
-    public string videoID = "KoridorIntrosu"; // Bu videoya özel bir ID
+    public string videoID = "KoridorIntrosu";
 
     private VideoPlayer videoPlayer;
     private bool isTransitioning = false;
@@ -23,31 +24,34 @@ public class IntroVideoManager : MonoBehaviour
         // --- KRÝTÝK KONTROL: Video daha önce izlendi mi? ---
         if (GameManager.AraSahneIzlendiMi(videoID))
         {
-            // Eðer izlendiyse video objesini anýnda yok et ve UI'larý aç
             HizliBaslat();
             return;
         }
 
         videoPlayer = GetComponent<VideoPlayer>();
+        videoPlayer.playOnAwake = false; // YENÝ: Flicker engellemek için kodla baþlatacaðýz
 
         // Video oynayacaksa baþlangýç ayarlarý
         if (combatUI != null) combatUI.SetActive(false);
         if (envanterUI != null) envanterUI.SetActive(false);
+
         if (fadePanel != null)
         {
             fadePanel.color = new Color(0, 0, 0, 1);
             fadePanel.raycastTarget = true;
         }
 
+        // YENÝ: Baþlangýçta video ekraný kapalý kalsýn, video hazýr olunca açacaðýz
+        if (videoEkrani != null) videoEkrani.gameObject.SetActive(false);
+
         videoPlayer.loopPointReached += OnVideoFinished;
     }
 
     void Start()
     {
-        // Eðer video objesi hala hayattaysa (izlenmemiþse) coroutine'i baþlat
-        if (videoPlayer != null)
+        if (videoPlayer != null && !GameManager.AraSahneIzlendiMi(videoID))
         {
-            StartCoroutine(VideoBaslayincaSiyahiKaldir());
+            StartCoroutine(VideoGarantiliBaslat());
         }
     }
 
@@ -56,20 +60,36 @@ public class IntroVideoManager : MonoBehaviour
     {
         if (combatUI != null) combatUI.SetActive(true);
         if (envanterUI != null) envanterUI.SetActive(true);
+        if (videoEkrani != null) videoEkrani.gameObject.SetActive(false); // YENÝ
         if (fadePanel != null)
         {
             fadePanel.color = new Color(0, 0, 0, 0);
             fadePanel.raycastTarget = false;
         }
-        Destroy(gameObject); // Video oynatýcýyý sahneden sil
+        Destroy(gameObject);
     }
 
-    IEnumerator VideoBaslayincaSiyahiKaldir()
+    // ESKÝ COROUTINE YERÝNE DAHA GÜVENLÝ VE PROFESYONEL BAÞLANGIÇ
+    IEnumerator VideoGarantiliBaslat()
     {
-        while (!videoPlayer.isPlaying)
+        videoPlayer.Prepare(); // Videoyu önbelleðe al
+
+        while (!videoPlayer.isPrepared)
         {
             yield return null;
         }
+
+        // Video artýk hazýr! Ekraný aç ve oynat
+        if (videoEkrani != null) videoEkrani.gameObject.SetActive(true);
+        videoPlayer.Play();
+
+        // En az 2 kare (frame) çizilene kadar siyah perdeyi kaldýrma (Flicker kesin çözüm)
+        while (videoPlayer.frame < 2)
+        {
+            yield return null;
+        }
+
+        // Video görünmeye baþladý, artýk siyah perdeyi anýnda kaldýrabiliriz
         if (fadePanel != null) fadePanel.color = new Color(0, 0, 0, 0);
     }
 
@@ -92,8 +112,9 @@ public class IntroVideoManager : MonoBehaviour
         }
 
         videoPlayer.Stop();
+        if (videoEkrani != null) videoEkrani.gameObject.SetActive(false); // YENÝ: Video ekranýný gizle
 
-        // 2. ADIM: Ýzlendi olarak iþaretle (Artýk koridora dönünce oynamayacak)
+        // 2. ADIM: Ýzlendi olarak iþaretle
         GameManager.IzlendiOlarakIsaretle(videoID);
 
         if (combatUI != null) combatUI.SetActive(true);
